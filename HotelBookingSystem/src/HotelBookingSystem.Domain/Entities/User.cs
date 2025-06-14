@@ -10,4 +10,5 @@ public class User
     public string PhoneNumber { get; set; }
     public string Salt { get; set; }
     public List<Card> Cards { get; set; }
+    public List<Review> Reviews { get; set; }
 }
