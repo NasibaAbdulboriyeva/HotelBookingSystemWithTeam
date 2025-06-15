@@ -12,6 +12,6 @@ public class Booking
     public bool IsActive { get; set; }
     public long UserId { get; set; }
     public User User { get; set; }
-  
+    public Payment Payment { get; set; }
 
 }
