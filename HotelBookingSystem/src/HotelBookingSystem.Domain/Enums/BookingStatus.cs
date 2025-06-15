@@ -1,4 +1,4 @@
-﻿namespace HotelBookingSystem.Domain.Entities;
+﻿namespace HotelBookingSystem.Domain.Enums;
 
 public enum BookingStatus
 {
