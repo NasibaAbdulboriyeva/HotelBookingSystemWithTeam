@@ -1,4 +1,6 @@
-﻿public enum CardType
+﻿namespace HotelBookingSystem.Domain.Enums;
+
+public enum CardType
 {
     Visa = 0,           
     MasterCard = 1,     
