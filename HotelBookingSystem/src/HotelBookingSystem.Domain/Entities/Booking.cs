@@ -6,7 +6,7 @@ public class Booking
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public DateTime CreatedAt { get; set; }
-    public string Status { get; set; }
+    public BookingStatus Status { get; set; }
     public bool IsActive { get; set; }
   
 }
