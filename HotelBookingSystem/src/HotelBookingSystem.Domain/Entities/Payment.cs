@@ -14,4 +14,7 @@ public class Payment
     public PaymentStatus Status { get; set; }
     public PaymentMethod PaymentMethod { get; set; }
     public DateTime PaidAt { get; set; }
+    public long BookingId { get; set; }
+    public Booking Booking { get; set; }
+    
 }
