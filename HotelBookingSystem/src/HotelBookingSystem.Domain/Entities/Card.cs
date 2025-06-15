@@ -7,7 +7,7 @@ public class Card
     public string CardHolderName { get; set; }
     public int ExpiryMonth { get; set; }
     public int ExpiryYear { get; set; }
-    public string CardType { get; set; }
+    public CardType Type { get; set; }
     public bool SelectedForPayment { get; set; }
     public int CVV { get; set; }
 
