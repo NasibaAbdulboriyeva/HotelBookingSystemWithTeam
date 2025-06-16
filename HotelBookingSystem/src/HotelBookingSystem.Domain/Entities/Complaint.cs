@@ -8,6 +8,10 @@ public class Complaint
     public string Message { get; set; }
     public DateTime CreatedAt { get; set; }
     public ComplaintStatus Status { get; set; }
+
     public long UserId { get; set; }
     public User User { get; set; }
+
+    public long HotelId { get; set; }
+    public Hotel Hotel { get; set; }
 }

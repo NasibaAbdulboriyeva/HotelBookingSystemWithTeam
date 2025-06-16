@@ -12,5 +12,7 @@ namespace HotelBookingSystem.Domain.Entities
         public string  RoleName { get; set; }
         public string  Description { get; set; }
         public bool IsActive { get; set; }
+        public long HotelId { get; set; }
+        public Hotel Hotel { get; set; }
     }
 }
