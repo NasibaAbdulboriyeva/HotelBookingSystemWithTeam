@@ -12,4 +12,5 @@ public class User
     public List<Card> Cards { get; set; }
     public List<Review> Reviews { get; set; }
     public List<Booking> Bookings { get; set; }
+    public List<Complaint> Complaints { get; set; }
 }
