@@ -13,4 +13,6 @@ public class Service
     public string Description  { get; set; }
     public decimal Price  { get; set; }
     public bool IsAvailable { get; set; }
+    public long HotelId { get; set; }
+    public Hotel Hotel { get; set; } = new Hotel();
 }
