@@ -15,5 +15,5 @@ public class Hotel
     public string Description { get; set; }
     public int TotalRooms { get; set; }
     public int StarRating{ get; set; }
- 
+    public List<Room> Rooms { get; set; } = new List<Room>();
 }
