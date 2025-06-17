@@ -11,7 +11,7 @@ public class Card
     public int ExpiryYear { get; set; }
     public CardType Type { get; set; }
     public bool SelectedForPayment { get; set; }
-    public int CVV { get; set; }
+    public string CVV { get; set; }
 
     public long UserId { get; set; }
     public User User { get; set; }
