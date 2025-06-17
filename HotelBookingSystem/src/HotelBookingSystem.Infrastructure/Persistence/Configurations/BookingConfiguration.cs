@@ -22,6 +22,7 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         builder.HasOne(b => b.Payment)
             .WithOne(p => p.Booking)
             .HasForeignKey<Payment>(p => p.BookingId);
+    
 
         builder.HasOne(b => b.User)
             .WithMany(u => u.Bookings)
