@@ -20,7 +20,7 @@ namespace HotelBookingSystem.Infrastructure
         public DbSet<BookingRoom> BookingRooms { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<Complaint> Complaints { get; set; }
-        public DbSet<Hotel> Hotel { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Role> Roles { get; set; }
