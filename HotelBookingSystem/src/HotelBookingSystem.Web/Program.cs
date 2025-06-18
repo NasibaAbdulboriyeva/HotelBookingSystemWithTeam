@@ -1,4 +1,6 @@
 
+using HotelBookingSystem.Web.Configurations;
+
 namespace HotelBookingSystem.Web
 {
     public class Program
@@ -13,6 +15,8 @@ namespace HotelBookingSystem.Web
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.ConfigureDB();
 
             var app = builder.Build();
 
