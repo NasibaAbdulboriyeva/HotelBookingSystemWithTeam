@@ -13,4 +13,5 @@ public class User
     public List<Review> Reviews { get; set; }
     public List<Booking> Bookings { get; set; }
     public List<Complaint> Complaints { get; set; }
+    public List<UserRole> UserRoles { get; set; }
 }
