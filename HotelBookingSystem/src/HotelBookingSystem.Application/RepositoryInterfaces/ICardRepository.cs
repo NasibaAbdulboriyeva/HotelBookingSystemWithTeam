@@ -5,7 +5,7 @@ public interface ICardRepository
 {
     Task<Card> SelectByIdAsync(long id);
     Task<ICollection<Card>> SelectAllCardsAsync();
-    Task InsertAsync(Card card);
+    Task<long> InsertAsync(Card card);
     Task<Card> SelectSelectedCardByUserIdAsync(long userId);
     Task AssignCardAsSelectedAsync(long cardId);
     Task AssignCardAsNotSelectedAsync(long cardId);

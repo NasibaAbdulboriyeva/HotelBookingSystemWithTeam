@@ -9,6 +9,6 @@ public interface IReviewRepository
 
     Task<IEnumerable<Review>> SelectByUserIdAsync(long userId);
 
-    Task InsertAsync(Review review);
+    Task<long> InsertAsync(Review review);
 }
 

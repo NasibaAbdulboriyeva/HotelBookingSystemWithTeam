@@ -8,7 +8,7 @@ public interface IPaymentRepository
     Task<ICollection<Payment>> SelectByBookingIdAsync(long bookingId);
     Task<ICollection<Payment>> SelectByUserIdAsync(long userId);
     Task<ICollection<Payment>> SelectByStatusAsync(PaymentStatus status);
-    Task InsertAsync(Payment payment);
+    Task<long> InsertAsync(Payment payment);
     Task UpdateAsync(Payment payment);
     Task RemoveAsync(long paymentId);
 }

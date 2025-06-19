@@ -5,7 +5,7 @@ public interface IHotelRepository
 {
     Task<Hotel> SelectByIdAsync(long id);
     Task<ICollection<Hotel>> SelectAllAsync();
-    Task InsertAsync(Hotel hotel);
+    Task<long> InsertAsync(Hotel hotel);
     Task<ICollection<Hotel>> SelectByLocationAsync(string location);
     Task UpdateAsync(Hotel hotel);
     Task RemoveAsync(long id);

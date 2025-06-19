@@ -9,7 +9,7 @@ public interface IBookingRepository
     Task<ICollection<Booking>> SelectActiveBookingsByUserIdAsync(long userId);
     Task<ICollection<Booking>> SelectActiveBookingsByRoomIdAsync(long roomId);
     Task<ICollection<Booking>> SelectByStatusAsync(BookingStatus status);
-    Task InsertAsync(Booking booking);
+    Task<long> InsertAsync(Booking booking);
     Task UpdateAsync(Booking booking);
     Task RemoveAsync(long id);
 }
