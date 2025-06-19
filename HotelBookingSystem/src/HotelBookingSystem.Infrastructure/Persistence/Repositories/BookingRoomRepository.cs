@@ -26,6 +26,10 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 
         public async Task RemoveAsync(BookingRoom bookingRoom)
         {
+            if (bookingRoom == null)
+            {
+                throw new ArgumentNullException(nameof(bookingRoom));
+            }
             _context.BookingRooms.Remove(bookingRoom);
             await _context.SaveChangesAsync();
         }
@@ -39,8 +43,15 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 
         public async Task<BookingRoom> SelectByIdsAsync(long bookingId, long roomId)
         {
-            return await _context.BookingRooms
+            var bookingRoom = await _context.BookingRooms
                             .FirstOrDefaultAsync(br => br.BookingId == bookingId && br.RoomId == roomId);
+
+            if (bookingRoom == null)
+            {
+                throw new KeyNotFoundException($"BookingRoom with BookingId {bookingId} and RoomId {roomId} not found.");
+            }
+            return bookingRoom;
+
         }
 
         public async Task<ICollection<BookingRoom>> SelectByRoomIdAsync(long roomId)
