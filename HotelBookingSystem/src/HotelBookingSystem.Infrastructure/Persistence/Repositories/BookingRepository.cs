@@ -1,12 +1,8 @@
 ﻿
+using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Domain.Entities;
 using HotelBookingSystem.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 {
@@ -19,7 +15,15 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         {
             _context = context;
         }
-        public async Task DeleteAsync(long id)
+
+        public async Task<long> InsertAsync(Booking booking)
+        {
+            await _context.Bookings.AddAsync(booking);
+            await _context.SaveChangesAsync();
+            return booking.BookingId;
+        }
+
+        public async Task RemoveAsync(long id)
         {
             var booking = await _context.Bookings.FindAsync(id);
             if (booking != null)
@@ -29,34 +33,21 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             }
         }
 
-        public async Task<List<Booking>> GetByStatusAsync(BookingStatus status)
-        {
-            return await _context.Bookings
-                .Where(b => b.Status == status)
-                .ToListAsync();
-        }
-
-        public async Task InsertAsync(Booking booking)
-        {
-            await _context.Bookings.AddAsync(booking);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<List<Booking>> SelectActiveBookingsByRoomIdAsync(long roomId)
+        public async Task<ICollection<Booking>> SelectActiveBookingsByRoomIdAsync(long roomId)
         {
             return await _context.Bookings
                             .Where(b => b.BookingId == roomId && b.IsActive)
                             .ToListAsync();
         }
 
-        public async Task<List<Booking>> SelectActiveBookingsByUserIdAsync(long userId)
+        public async Task<ICollection<Booking>> SelectActiveBookingsByUserIdAsync(long userId)
         {
             return await _context.Bookings
                             .Where(b => b.UserId == userId && b.IsActive)
                             .ToListAsync();
         }
 
-        public async Task<List<Booking>> SelectAllAsync()
+        public async Task<ICollection<Booking>> SelectAllAsync()
         {
             return await _context.Bookings.ToListAsync();
         }
@@ -66,6 +57,13 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             return await _context.Bookings.FindAsync(id);
         }
 
+        public async Task<ICollection<Booking>> SelectByStatusAsync(BookingStatus status)
+        {
+            return await _context.Bookings
+                            .Where(b => b.Status == status)
+                            .ToListAsync();
+        }
+
         public async Task UpdateAsync(Booking booking)
         {
             _context.Bookings.Update(booking);
@@ -73,3 +71,4 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         }
     }
 }
+        
