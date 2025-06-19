@@ -49,6 +49,10 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
                             .Where(br => br.RoomId == roomId)
                             .ToListAsync();
         }
+        public async Task<ICollection<BookingRoom>> SelectAllAsync()
+        {
+            return await _context.BookingRooms.ToListAsync();
+        }
 
         public async Task UpdateAsync(BookingRoom bookingRoom)
         {

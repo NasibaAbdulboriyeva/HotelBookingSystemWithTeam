@@ -66,9 +66,13 @@ public class RoomRepository : IRoomRepository
 
     public async Task UpdateAvailabilityAsync(long roomId, bool isAvailable)
     {
-       var room = await SelectByIdAsync(roomId);
+        var room = await SelectByIdAsync(roomId);
         room.Availibility = isAvailable;
         _context.Rooms.Update(room);
         await _context.SaveChangesAsync();
+    }
+    public async Task<ICollection<Room>> SelectAllAsync()
+    {
+        return await _context.Rooms.ToListAsync();
     }
 }
