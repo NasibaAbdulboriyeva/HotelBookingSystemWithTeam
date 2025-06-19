@@ -54,7 +54,10 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 
         public async Task<Booking> SelectByIdAsync(long id)
         {
-            return await _context.Bookings.FindAsync(id);
+            var booking = await _context.Bookings.FindAsync(id);
+            if (booking == null)
+                throw new KeyNotFoundException($"Booking with Id {id} not found.");
+            return booking;
         }
 
         public async Task<ICollection<Booking>> SelectByStatusAsync(BookingStatus status)

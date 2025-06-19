@@ -1,6 +1,5 @@
-﻿namespace HotelBookingSystem.Domain.Entities;
-
-public class Room
+﻿namespace HotelBookingSystem.Application.Dtos.RoomDtos;
+public class RoomDto
 {
     public long RoomId { get; set; }
     public int RoomNumber { get; set; }
@@ -9,7 +8,4 @@ public class Room
     public bool IsAvailable { get; set; }
 
     public long HotelId { get; set; }
-    public Hotel Hotel { get; set; }
-
-    public List<BookingRoom> BookingRooms { get; set; } = new List<BookingRoom>();
 }
