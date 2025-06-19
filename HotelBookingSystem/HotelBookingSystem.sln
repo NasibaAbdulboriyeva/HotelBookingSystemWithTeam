@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingSystem.Web", "src\HotelBookingSystem.Web\HotelBookingSystem.Web.csproj", "{22C14D84-A60B-44EC-AB7E-90F952465A30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookingSystem.Web", "src\HotelBookingSystem.Web\HotelBookingSystem.Web.csproj", "{22C14D84-A60B-44EC-AB7E-90F952465A30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingSystem.Application", "src\HotelBookingSystem.Application\HotelBookingSystem.Application.csproj", "{E040979C-58DC-4083-AED9-A9DF642342D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookingSystem.Application", "src\HotelBookingSystem.Application\HotelBookingSystem.Application.csproj", "{E040979C-58DC-4083-AED9-A9DF642342D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingSystem.Domain", "src\HotelBookingSystem.Domain\HotelBookingSystem.Domain.csproj", "{A38736E7-534A-4840-8573-BA7CABE6AA48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookingSystem.Domain", "src\HotelBookingSystem.Domain\HotelBookingSystem.Domain.csproj", "{A38736E7-534A-4840-8573-BA7CABE6AA48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingSystem.Infrastructure", "src\HotelBookingSystem.Infrastructure\HotelBookingSystem.Infrastructure.csproj", "{7BC6FC36-DB63-4AFB-A811-C843C3A89F20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookingSystem.Infrastructure", "src\HotelBookingSystem.Infrastructure\HotelBookingSystem.Infrastructure.csproj", "{7BC6FC36-DB63-4AFB-A811-C843C3A89F20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingSystem.Core", "src\HotelBookingSystem.Core\HotelBookingSystem.Core.csproj", "{415D3DE9-A0B6-4B87-AA61-167913B39820}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelBookingSystem.Core", "src\HotelBookingSystem.Core\HotelBookingSystem.Core.csproj", "{415D3DE9-A0B6-4B87-AA61-167913B39820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelBookingSystem.Tests", "Tests\HotelBookingSystem.Tests\HotelBookingSystem.Tests.csproj", "{2A58AFA0-A356-44E7-99B8-95A2FBB26B68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{415D3DE9-A0B6-4B87-AA61-167913B39820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{415D3DE9-A0B6-4B87-AA61-167913B39820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{415D3DE9-A0B6-4B87-AA61-167913B39820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A58AFA0-A356-44E7-99B8-95A2FBB26B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A58AFA0-A356-44E7-99B8-95A2FBB26B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A58AFA0-A356-44E7-99B8-95A2FBB26B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A58AFA0-A356-44E7-99B8-95A2FBB26B68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
