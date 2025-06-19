@@ -7,7 +7,7 @@ public interface IRoomRepository
     Task<ICollection<Room>> SelectByHotelIdAsync(long hotelId);
     Task<ICollection<Room>> SelectAvailableRoomsAsync(DateTime startDate, DateTime endDate);
     Task<Room> SelectByNumberAsync(int roomNumber);
-    Task InsertAsync(Room room);
+    Task<long> InsertAsync(Room room);
     Task UpdateAvailabilityAsync(long roomId, bool isAvailable);
 }
 

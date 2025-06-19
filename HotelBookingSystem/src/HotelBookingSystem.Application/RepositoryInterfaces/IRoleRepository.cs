@@ -3,7 +3,7 @@
 namespace HotelBookingSystem.Application.RepositoryInterfaces;
 public interface IRoleRepository
 {
-    Task InsertAsync(Role role);
+    Task<long> InsertAsync(Role role);
     Task<Role> SelectAsync(long roleId);
     Task<Role> SelectByNameAsync(string roleName);
     Task UpdateAsync(Role role);
