@@ -6,6 +6,7 @@ public interface IRoleRepository
     Task<long> InsertAsync(Role role);
     Task<Role> SelectByIdAsync(long roleId);
     Task<Role> SelectByNameAsync(string roleName);
+    Task<ICollection<Role>> SelectAllAsync();
     Task UpdateAsync(Role role);
     Task RemoveAsync(long roleId);
 }

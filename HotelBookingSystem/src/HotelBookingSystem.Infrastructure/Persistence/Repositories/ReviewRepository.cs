@@ -45,7 +45,11 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 
         public async Task<IEnumerable<Review>> SelectByUserIdAsync(long userId)
         {
-           return await appDbContext.Reviews.Where(r=> r.UserId == userId).ToListAsync();           
+            return await appDbContext.Reviews.Where(r => r.UserId == userId).ToListAsync();
+        }
+        public async Task<ICollection<Review>> SelectAllAsync()
+        {
+            return await appDbContext.Reviews.ToListAsync();
         }
     }
 }

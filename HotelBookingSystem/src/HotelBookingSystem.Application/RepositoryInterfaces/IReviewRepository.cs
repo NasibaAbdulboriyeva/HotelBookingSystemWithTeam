@@ -8,6 +8,7 @@ public interface IReviewRepository
     Task<IEnumerable<Review>> SelectByHotelIdAsync(long hotelId);
 
     Task<IEnumerable<Review>> SelectByUserIdAsync(long userId);
+    Task<ICollection<Review>> SelectAllAsync();
 
     Task<long> InsertAsync(Review review);
 }

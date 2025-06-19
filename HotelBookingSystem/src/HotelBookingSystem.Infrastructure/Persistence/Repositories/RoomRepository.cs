@@ -31,7 +31,7 @@ public class RoomRepository : IRoomRepository
            .ToListAsync();
 
         return await _context.Rooms
-            .Where(r => r.Availibility && !bookedRoom.Contains(r.RoomId))
+            .Where(r => r.IsAvailable && !bookedRoom.Contains(r.RoomId))
             .ToListAsync();
     }
 
@@ -66,9 +66,13 @@ public class RoomRepository : IRoomRepository
 
     public async Task UpdateAvailabilityAsync(long roomId, bool isAvailable)
     {
-       var room = await SelectByIdAsync(roomId);
-        room.Availibility = isAvailable;
+        var room = await SelectByIdAsync(roomId);
+        room.IsAvailable = isAvailable;
         _context.Rooms.Update(room);
         await _context.SaveChangesAsync();
+    }
+    public async Task<ICollection<Room>> SelectAllAsync()
+    {
+        return await _context.Rooms.ToListAsync();
     }
 }
