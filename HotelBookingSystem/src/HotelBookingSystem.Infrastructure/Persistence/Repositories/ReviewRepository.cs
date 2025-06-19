@@ -23,7 +23,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             return review.ReviewId;
         }
 
-        public async Task<IEnumerable<Review>> SelectByHotelIdAsync(long hotelId)
+        public async Task<ICollection<Review>> SelectByHotelIdAsync(long hotelId)
         {
             var exists = await appDbContext.Reviews.Where(r => r.HotelId == hotelId).ToListAsync();
             if (exists == null)
@@ -43,7 +43,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             return review;
         }
 
-        public async Task<IEnumerable<Review>> SelectByUserIdAsync(long userId)
+        public async Task<ICollection<Review>> SelectByUserIdAsync(long userId)
         {
             return await appDbContext.Reviews.Where(r => r.UserId == userId).ToListAsync();
         }
