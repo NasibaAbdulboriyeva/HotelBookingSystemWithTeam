@@ -47,5 +47,8 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<IValidator<CreateCardDto>, CardCreateValidator>();
         builder.Services.AddScoped<IValidator<CreatePaymentDto>, PaymentCreateValidator>();
         builder.Services.AddScoped<IValidator<CreateHotelDto>, HotelCreateValidator>();
+
+        builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
     }
 }
