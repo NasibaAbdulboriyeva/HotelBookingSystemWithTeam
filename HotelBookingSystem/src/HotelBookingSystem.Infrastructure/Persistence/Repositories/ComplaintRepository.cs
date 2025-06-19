@@ -59,4 +59,8 @@ public class ComplaintRepository : IComplaintRepository
         _context.Update(complaint);
         await _context.SaveChangesAsync();
     }
+    public async Task<ICollection<Complaint>> SelectAllAsync()
+    {
+        return await _context.Complaints.ToListAsync();
+    }
 }

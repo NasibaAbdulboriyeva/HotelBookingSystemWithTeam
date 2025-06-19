@@ -4,7 +4,7 @@ namespace HotelBookingSystem.Application.RepositoryInterfaces;
 public interface ICardRepository
 {
     Task<Card> SelectByIdAsync(long id);
-    Task<ICollection<Card>> SelectAllCardsAsync();
+    Task<ICollection<Card>> SelectAllAsync();
     Task<long> InsertAsync(Card card);
     Task<Card> SelectSelectedCardByUserIdAsync(long userId);
     Task AssignCardAsSelectedAsync(long cardId);

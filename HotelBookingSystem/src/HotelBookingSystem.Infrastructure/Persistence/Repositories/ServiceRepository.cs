@@ -25,6 +25,10 @@ public class ServiceRepository : IServiceRepository
 
         return service;
     }
+    public async Task<ICollection<Service>> SelectAllAsync()
+    {
+        return await _context.Services.ToListAsync();
+    }
 
     public async Task<ICollection<Service>> SelectByHotelIdAsync(long hotelId)
     {

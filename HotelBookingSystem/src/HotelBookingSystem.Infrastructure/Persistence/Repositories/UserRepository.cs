@@ -59,4 +59,9 @@ public class UserRepository : IUserRepository
         _context.Users.Update(user);
         await _context.SaveChangesAsync();
     }
+    public async Task<ICollection<User>> SelectAllAsync()
+    {
+        return await _context.Users.ToListAsync();
+    }
+
 }
