@@ -64,4 +64,10 @@ public class UserRepository : IUserRepository
         return await _context.Users.ToListAsync();
     }
 
+    public async Task RemoveAsync(long userId)
+    {
+        var user = await SelectByIdAsync(userId);
+         _context.Users.Remove(user);
+        await _context.SaveChangesAsync();
+    }
 }
