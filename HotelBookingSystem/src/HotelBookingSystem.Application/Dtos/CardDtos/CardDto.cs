@@ -10,6 +10,7 @@ public class CardDto
     public int ExpiryYear { get; set; }
     public CardType Type { get; set; }
     public bool SelectedForPayment { get; set; }
+    public string CVV { get; set; }
 
     public long UserId { get; set; }
 }
