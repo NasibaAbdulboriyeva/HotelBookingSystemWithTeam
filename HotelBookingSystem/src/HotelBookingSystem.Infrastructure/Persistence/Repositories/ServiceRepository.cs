@@ -25,6 +25,10 @@ public class ServiceRepository : IServiceRepository
 
         return service;
     }
+    public async Task<ICollection<Service>> SelectAllAsync()
+    {
+        return await _context.Services.ToListAsync();
+    }
 
     public async Task<ICollection<Service>> SelectByHotelIdAsync(long hotelId)
     {
@@ -43,6 +47,13 @@ public class ServiceRepository : IServiceRepository
     public async Task UpdateAsync(Service service)
     {
         _context.Services.Update(service);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task RemoveAsync(long serviceId)
+    {
+        var service = await SelectByIdAsync(serviceId);
+        _context.Services.Remove(service);
         await _context.SaveChangesAsync();
     }
 }

@@ -1,5 +1,7 @@
 
 using HotelBookingSystem.Web.Configurations;
+using HotelBookingSystem.Web.Middlewares;
+using UserContacts.Web.Configurations;
 
 namespace HotelBookingSystem.Web
 {
@@ -17,8 +19,13 @@ namespace HotelBookingSystem.Web
             builder.Services.AddSwaggerGen();
 
             builder.ConfigureDB();
+            builder.ConfigureDI();
+            //builder.ConfigureJwtAuth();
 
             var app = builder.Build();
+
+            app.UseGlobalExceptionHandling();
+            app.UseMiddleware<RequestDurationMiddleware>();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

@@ -64,4 +64,8 @@ public class PaymentRepository : IPaymentRepository
         _context.Payments.Update(payment);
         await _context.SaveChangesAsync();
     }
+    public async Task<ICollection<Payment>> SelectAllAsync()
+    {
+        return await _context.Payments.ToListAsync();
+    }
 }

@@ -34,5 +34,9 @@ public class UserRoleRepository : IUserRoleRepository
             await _context.SaveChangesAsync();
         }
     }
+    public async Task<ICollection<UserRole>> SelectAllAsync()
+    {
+        return await _context.UserRoles.ToListAsync();
+    }
 }
 
