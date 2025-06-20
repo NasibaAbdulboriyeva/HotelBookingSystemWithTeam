@@ -6,8 +6,8 @@ public class Room
     public int RoomNumber { get; set; }
     public string RoomType { get; set; }
     public decimal Price { get; set; }
-    public bool IsAvailable { get; set; }
-
+    public bool IsAvailable { get; set; } = true;
+    public bool IsDeleted { get; set; } = false;
     public long HotelId { get; set; }
     public Hotel Hotel { get; set; }
 
