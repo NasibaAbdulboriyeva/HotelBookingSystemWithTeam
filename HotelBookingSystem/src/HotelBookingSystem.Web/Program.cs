@@ -23,7 +23,7 @@ namespace HotelBookingSystem.Web
 
             builder.ConfigureDB();
             builder.ConfigureDI();
-            //builder.ConfigureJwtAuth();
+            builder.ConfigureJwtAuth();
 
             var app = builder.Build();
 

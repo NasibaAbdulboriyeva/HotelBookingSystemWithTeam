@@ -62,9 +62,9 @@ namespace HotelBookingSystem.API.Controllers
         }
 
         [HttpPut("updateComplaint")]
-        public async Task Update(long id,  CreateComplaintDto updateDto)
+        public async Task Update(ComplaintDto updateDto)
         {
-            await _complaintService.UpdateAsync(id, updateDto);
+            await _complaintService.UpdateAsync( updateDto);
            
         }
 

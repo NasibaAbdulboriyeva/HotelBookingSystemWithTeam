@@ -12,7 +12,7 @@ namespace HotelBookingSystem.Application.Services.ComplaintService
         Task<ICollection<ComplaintDto>> GetByUserIdAsync(long userId);
         Task<ICollection<ComplaintDto>> GetAllAsync();
         Task<ICollection<ComplaintDto>> GetByStatusAsync(ComplaintStatus status);
-        Task UpdateAsync(long complaintId , CreateComplaintDto updateComplaintDto );
+        Task UpdateAsync(ComplaintDto updateComplaintDto );
         Task DeleteAsync(long complaintId);
     }
 }
