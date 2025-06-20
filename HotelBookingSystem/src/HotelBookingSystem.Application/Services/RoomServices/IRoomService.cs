@@ -1,4 +1,5 @@
-﻿using HotelBookingSystem.Application.Dtos.RoomDtos;
+﻿using HotelBookingSystem.Application.Dtos.RoleDtos;
+using HotelBookingSystem.Application.Dtos.RoomDtos;
 
 namespace HotelBookingSystem.Application.Services.RoomServices
 {
@@ -8,7 +9,7 @@ namespace HotelBookingSystem.Application.Services.RoomServices
         Task<IEnumerable<RoomDto>> GetAllRoomsAsync();
         Task<IEnumerable<RoomDto>> GetAvailableRoomsAsync();
         Task<long> CreateRoomAsync(CreateRoomDto newRoom);
-        Task UpdateRoomAsync(long roomId, CreateRoomDto updatedRoom);
+        Task UpdateRoomAsync(RoomDto roomDto);
         Task DeleteRoomAsync(long roomId);
     }
 }
