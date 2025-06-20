@@ -30,6 +30,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             {
                 _context.Bookings.Remove(booking);
                 await _context.SaveChangesAsync();
+                
             }
         }
 
