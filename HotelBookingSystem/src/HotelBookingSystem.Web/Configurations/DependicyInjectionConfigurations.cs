@@ -1,10 +1,12 @@
 ﻿using FluentValidation;
+using HotelBookingSystem.Application;
 using HotelBookingSystem.Application.Dtos.CardDtos;
 using HotelBookingSystem.Application.Dtos.HotelDtos;
 using HotelBookingSystem.Application.Dtos.PaymentDtos;
 using HotelBookingSystem.Application.Dtos.UserDtos;
 using HotelBookingSystem.Application.Mappings;
 using HotelBookingSystem.Application.RepositoryInterfaces;
+using HotelBookingSystem.Application.Services.AuthService;
 using HotelBookingSystem.Application.Services.CardServices;
 using HotelBookingSystem.Application.Services.ReviewService;
 using HotelBookingSystem.Application.Services.TokenService;
@@ -12,6 +14,7 @@ using HotelBookingSystem.Application.Validators.CardValidator;
 using HotelBookingSystem.Application.Validators.HotelValidator;
 using HotelBookingSystem.Application.Validators.PaymentValidator;
 using HotelBookingSystem.Application.Validators.UserValidator;
+using HotelBookingSystem.Infrastructure;
 using HotelBookingSystem.Infrastructure.Persistence.Repositories;
 
 namespace UserContacts.Web.Configurations;
@@ -52,6 +55,8 @@ public static class DependicyInjectionConfigurations
         // builder.Services.AddScoped<IAuthService, AuthService>();
 
         builder.Services.AddScoped<ITokenService, TokenService>();
+        builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+        builder.Services.AddScoped<IAuthService, AuthService>();
      
 
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
