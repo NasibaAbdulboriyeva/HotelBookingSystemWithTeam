@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HotelBookingSystem.Application.Dtos.BookingDtos;
+using HotelBookingSystem.Application.Dtos.CardDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Core.Errors;
 using HotelBookingSystem.Domain.Entities;
@@ -18,6 +19,7 @@ namespace HotelBookingSystem.Application.Services.BookingService
         }
         public async Task<long> CreateBookingAsync(CreateBookingDto createBookingDto)
         {
+            ArgumentNullException.ThrowIfNull(createBookingDto);
             var convert = mapper.Map<Booking>(createBookingDto);
             var id = await bookingRepository.InsertAsync(convert);
             return id;
@@ -25,12 +27,12 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
+            ArgumentNullException.ThrowIfNull(roomId);
             var booking = GetByIdBookingAsync(roomId);
             if(booking == null)
             {
                 throw new EntityNotFoundException($"Booking not found");
-            }
-            
+            }    
             var bookings = await bookingRepository.SelectActiveBookingsByRoomIdAsync(roomId);
             List<BookingDto> result = new List<BookingDto>();
             foreach(var book in bookings)
@@ -38,7 +40,6 @@ namespace HotelBookingSystem.Application.Services.BookingService
                 result.Add(mapper.Map<BookingDto>(bookings));
             }
             return result;
-
         }
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByUserIdAsync(long userId)
@@ -48,7 +49,6 @@ namespace HotelBookingSystem.Application.Services.BookingService
             {
                 throw new EntityNotFoundException($"Booking not found");
             }
-
             var bookings = await bookingRepository.SelectActiveBookingsByUserIdAsync(userId);
             List<BookingDto> dto = new List<BookingDto>();
             foreach (var book in bookings)
@@ -76,9 +76,12 @@ namespace HotelBookingSystem.Application.Services.BookingService
             return convert;
         }
 
-        public Task<ICollection<BookingDto>> GetByStatusAsync(BookingStatus status)
+        public async Task<ICollection<BookingDto>> GetByStatusAsync(BookingStatus status)
         {
-            throw new NotImplementedException();
+            ArgumentNullException.ThrowIfNull(status);
+            var booking = await bookingRepository.SelectByStatusAsync(status);
+            List BookingDto = new List<BookingDto>();
+
         }
 
         public async Task RemoveBookingAsync(long bookingID)
