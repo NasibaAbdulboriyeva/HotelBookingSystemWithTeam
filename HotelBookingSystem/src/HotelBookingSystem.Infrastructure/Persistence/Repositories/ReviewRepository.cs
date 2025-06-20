@@ -1,11 +1,6 @@
 ﻿using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 {
@@ -20,22 +15,19 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         {
             appDbContext.Reviews.Add(review);
             await appDbContext.SaveChangesAsync();
+
             return review.ReviewId;
         }
 
         public async Task<ICollection<Review>> SelectByHotelIdAsync(long hotelId)
         {
-            var exists = await appDbContext.Reviews.Where(r => r.HotelId == hotelId).ToListAsync();
-            if (exists == null)
-            {
-                throw new KeyNotFoundException($"this {hotelId} not found");
-            }
-            return exists;
+            return await appDbContext.Reviews
+                .Where(r => r.HotelId == hotelId).ToListAsync();
         }
 
         public async Task<Review> SelectByIdAsync(long id)
         {
-            var review =  await appDbContext.Reviews.FirstOrDefaultAsync(r => r.ReviewId == id);
+            var review = await appDbContext.Reviews.FirstOrDefaultAsync(r => r.ReviewId == id);
             if (review == null)
             {
                 throw new KeyNotFoundException($"this {id} not found");
@@ -45,11 +37,19 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 
         public async Task<ICollection<Review>> SelectByUserIdAsync(long userId)
         {
-            return await appDbContext.Reviews.Where(r => r.UserId == userId).ToListAsync();
+            return await appDbContext.Reviews
+                .Where(r => r.UserId == userId).ToListAsync();
         }
         public async Task<ICollection<Review>> SelectAllAsync()
         {
             return await appDbContext.Reviews.ToListAsync();
+        }
+
+        public async Task RemoveAsync(long reviewId)
+        {
+            var review = await SelectByIdAsync(reviewId);
+            appDbContext.Reviews.Remove(review);
+            await appDbContext.SaveChangesAsync();
         }
     }
 }

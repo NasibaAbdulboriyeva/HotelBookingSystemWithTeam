@@ -7,6 +7,7 @@ using HotelBookingSystem.Application.Mappings;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Application.Services.CardServices;
 using HotelBookingSystem.Application.Services.ComplaintService;
+using HotelBookingSystem.Application.Services.ReviewService;
 using HotelBookingSystem.Application.Services.TokenService;
 using HotelBookingSystem.Application.Validators.CardValidator;
 using HotelBookingSystem.Application.Validators.HotelValidator;
@@ -20,8 +21,9 @@ public static class DependicyInjectionConfigurations
 {
     public static void ConfigureDI(this WebApplicationBuilder builder)
     {
-        builder.Services.AddAutoMapper(typeof(CardMapper));
-        builder.Services.AddAutoMapper(typeof(ComplaintMapper));
+
+
+
         builder.Services.AddScoped<IValidator<CreateUserDto>, UserCreateValidator>();
         builder.Services.AddScoped<IValidator<UserLoginDto>, UserLoginValidator>();
         builder.Services.AddScoped<IValidator<CreateCardDto>, CardCreateValidator>();
@@ -33,13 +35,18 @@ public static class DependicyInjectionConfigurations
         //builder.Services.AddScoped<IUserService, UserService>();
 
         builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
-        // builder.Services.AddScoped<IUserRoleService, UserRoleService>();
+         //builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
         builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
         builder.Services.AddScoped<IComplaintRepository, ComplaintRepository>();
         builder.Services.AddScoped<IComplaintService, ComplaintService>();
+
+
+
         builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+        builder.Services.AddScoped<IReviewService, ReviewService>();
+
         builder.Services.AddScoped<IHotelRepository, HotelRepository>();
         builder.Services.AddScoped<IRoomRepository, RoomRepository>();
         builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();

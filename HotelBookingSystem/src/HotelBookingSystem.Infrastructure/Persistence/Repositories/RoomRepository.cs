@@ -75,4 +75,23 @@ public class RoomRepository : IRoomRepository
     {
         return await _context.Rooms.ToListAsync();
     }
+
+    public async Task UpdateAsync(Room room)
+    {
+        var existingRoom = await _context.Rooms.FirstOrDefaultAsync(r => r.RoomId == room.RoomId);
+        if (existingRoom == null)
+        {
+            throw new KeyNotFoundException($"Room with ID {room.RoomId} not found.");
+        }
+
+        existingRoom.RoomNumber = room.RoomNumber;
+        existingRoom.RoomType = room.RoomType;
+        existingRoom.Price = room.Price;
+        existingRoom.IsAvailable = room.IsAvailable;
+        existingRoom.HotelId = room.HotelId;
+        existingRoom.IsDeleted = room.IsDeleted; 
+
+        _context.Rooms.Update(existingRoom);
+        await _context.SaveChangesAsync();
+    }
 }
