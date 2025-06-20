@@ -11,6 +11,6 @@ public interface IBookingRepository
     Task<ICollection<Booking>> SelectByStatusAsync(BookingStatus status);
     Task<long> InsertAsync(Booking booking);
     Task UpdateAsync(Booking booking);
-    Task RemoveAsync(long id);
+    Task<bool> RemoveAsync(long id);
 }
 
