@@ -9,6 +9,7 @@ using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Application.Services.AuthService;
 using HotelBookingSystem.Application.Services.CardServices;
 using HotelBookingSystem.Application.Services.ComplaintService;
+using HotelBookingSystem.Application.Services.HotelService;
 using HotelBookingSystem.Application.Services.ReviewService;
 using HotelBookingSystem.Application.Services.TokenService;
 using HotelBookingSystem.Application.Validators.CardValidator;
@@ -51,6 +52,8 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<IReviewService, ReviewService>();
 
         builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+        builder.Services.AddScoped<IHotelService, HotelService>();
+
         builder.Services.AddScoped<IRoomRepository, RoomRepository>();
         builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
         builder.Services.AddScoped<IServiceRepository, ServiceRepository>();

@@ -62,9 +62,9 @@ namespace HotelBookingSystem.Application.Services.ComplaintService
             return complaints.Select(_mapper.Map<ComplaintDto>).ToList();
         }
 
-        public async Task UpdateAsync(long complaintId, CreateComplaintDto updateComplaintDto)
+        public async Task UpdateAsync( ComplaintDto updateComplaintDto)
         {
-            var complaint = await _complaintRepository.SelectByIdAsync(complaintId);
+            var complaint = await _complaintRepository.SelectByIdAsync(updateComplaintDto.ComplaintId);
             if (complaint == null)
             {
                 throw new EntityNotFoundException("Complaint not found.");
