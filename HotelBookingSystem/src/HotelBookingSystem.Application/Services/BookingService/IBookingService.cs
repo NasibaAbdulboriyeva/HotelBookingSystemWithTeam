@@ -8,7 +8,7 @@ namespace HotelBookingSystem.Application.Services.BookingService
     {
         Task<long> CreateBookingAsync(CreateBookingDto createBookingDto);
         Task UpdateBookingAsync(BookingDto updateBookingDto);
-        Task RemoveBookingAsync(long bookingID);
+        Task DeleteBookingAsync(long bookingId);
         Task<BookingDto> GetByIdBookingAsync(long bookingID);
         Task<ICollection<BookingDto>> GetAllAsync();
         Task<ICollection<BookingDto>> GetActiveBookingsByUserIdAsync(long userId);

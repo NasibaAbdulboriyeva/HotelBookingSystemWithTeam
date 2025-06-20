@@ -19,9 +19,9 @@ namespace HotelBookingSystem.Application.Services.BookingService
         public async Task<long> CreateBookingAsync(CreateBookingDto createBookingDto)
         {
             ArgumentNullException.ThrowIfNull(createBookingDto);
-            var convert = mapper.Map<Booking>(createBookingDto);
+            var bookingEntity = mapper.Map<Booking>(createBookingDto);
 
-            return await bookingRepository.InsertAsync(convert);
+            return await bookingRepository.InsertAsync(bookingEntity);
         }
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
@@ -42,27 +42,27 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
         public async Task<ICollection<BookingDto>> GetAllAsync()
         {
-            var booking = await bookingRepository.SelectAllAsync();            
-            return mapper.Map<ICollection<BookingDto>>(booking);
+            var bookings = await bookingRepository.SelectAllAsync();            
+            return mapper.Map<ICollection<BookingDto>>(bookings);
         }
 
         public async Task<BookingDto> GetByIdBookingAsync(long bookingID)
         {
             var booking = await bookingRepository.SelectByIdAsync(bookingID);
-            var convert = mapper.Map<BookingDto>(booking);
+            var bookingDto = mapper.Map<BookingDto>(booking);
 
-            return convert;
+            return bookingDto;
         }
 
         public async Task<ICollection<BookingDto>> GetByStatusAsync(BookingStatus status)
         {
             ArgumentNullException.ThrowIfNull(status);
-            var booking = await bookingRepository.SelectByStatusAsync(status);
+            var bookings = await bookingRepository.SelectByStatusAsync(status);
 
-            return mapper.Map<ICollection<BookingDto>>(booking);
+            return mapper.Map<ICollection<BookingDto>>(bookings);
         }
 
-        public async Task RemoveBookingAsync(long bookingId)
+        public async Task DeleteBookingAsync(long bookingId)
         {
             var booking = await bookingRepository.SelectByIdAsync(bookingId);
             await bookingRepository.RemoveAsync(bookingId);
@@ -70,8 +70,8 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
         public async Task UpdateBookingAsync(BookingDto updateBookingDto)
         {
-            var convert = mapper.Map<Booking>(updateBookingDto);
-            await bookingRepository.UpdateAsync(convert);
+            var BookEntity = mapper.Map<Booking>(updateBookingDto);
+            await bookingRepository.UpdateAsync(BookEntity);
         }
     }
 }
