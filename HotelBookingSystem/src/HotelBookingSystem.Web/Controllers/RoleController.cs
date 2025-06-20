@@ -8,47 +8,47 @@ namespace HotelBookingSystem.Web.Controllers
     [ApiController]
     public class RoleController : ControllerBase
     {
-        private readonly IRoleService _roleService;
+        private readonly IRoleService RoleService;
 
         public RoleController(IRoleService roleService)
         {
-            _roleService = roleService;
+            RoleService = roleService;
         }
 
         [HttpPost("create")]
         public Task<long> CreateRoleAsync(CreateRoleDto createRoleDto)
         {
-            return _roleService.CreateRoleAsync(createRoleDto);
+            return RoleService.CreateRoleAsync(createRoleDto);
         }
 
         [HttpGet("getAll")]
         public Task<ICollection<RoleDto>> GetAllRolesAsync()
         {
-            return _roleService.GetAllRolesAsync();
+            return RoleService.GetAllRolesAsync();
         }
 
         [HttpGet("getById")]
         public Task<RoleDto> GetRoleByIdAsync(long roleId)
         {
-            return _roleService.GetRoleByIdAsync(roleId);
+            return RoleService.GetRoleByIdAsync(roleId);
         }
 
         [HttpGet("getByName")]
         public Task<RoleDto> GetRoleByNameAsync(string roleName)
         {
-            return _roleService.GetRoleByNameAsync(roleName);
+            return RoleService.GetRoleByNameAsync(roleName);
         }
 
         [HttpPut("update")]
-        public Task UpdateRoleAsync(RoleDto roleDto)
+        public async Task UpdateRoleAsync(RoleDto roleDto)
         {
-            return _roleService.UpdateRoleAsync(roleDto);
+            await RoleService.UpdateRoleAsync(roleDto);
         }
 
         [HttpDelete("delete")]
         public Task DeleteRoleAsync(long roleId)
         {
-            return _roleService.DeleteRoleAsync(roleId);
+            return RoleService.DeleteRoleAsync(roleId);
         }
     }
 }
