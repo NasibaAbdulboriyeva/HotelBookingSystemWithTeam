@@ -6,7 +6,7 @@ public class CardCreateValidator : AbstractValidator<CreateCardDto>
 {
     public CardCreateValidator()
     {
-        RuleFor(x => x.CardNumber)
+        RuleFor(x => x.CardNumberMasked)
             .NotEmpty().WithMessage("Card number is required.")
             .CreditCard().WithMessage("Invalid card number format.");
 

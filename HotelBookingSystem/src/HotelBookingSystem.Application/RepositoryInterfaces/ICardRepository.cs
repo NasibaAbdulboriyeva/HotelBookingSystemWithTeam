@@ -9,5 +9,7 @@ public interface ICardRepository
     Task<Card> SelectSelectedCardByUserIdAsync(long userId);
     Task AssignCardAsSelectedAsync(long cardId);
     Task AssignCardAsNotSelectedAsync(long cardId);
+    Task AssignCardsAsNotSelectedAsync(ICollection<Card> cards);
+    Task<ICollection<Card>> SelectCardsByUserIdAsync(long userId);
     Task DeleteAsync(long id);
 }

@@ -18,7 +18,7 @@ public class RoomConfiguration : IEntityTypeConfiguration<Room>
 
         builder.Property(r => r.Price).IsRequired().HasColumnType("decimal(18,2)");
 
-        builder.Property(r => r.Availibility).IsRequired();
+        builder.Property(r => r.IsAvailable).IsRequired();
 
         builder.HasOne(r => r.Hotel)
             .WithMany(h => h.Rooms)

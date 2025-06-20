@@ -37,11 +37,10 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         public async Task DeleteAsync(long id)
         {
             var card = await _appDbContext.Cards.FirstOrDefaultAsync(c => c.CardId == id);
-            if (card != null)
-            {
+          
                 _appDbContext.Cards.Remove(card);
                 await _appDbContext.SaveChangesAsync();
-            }
+            
         }
 
         public async Task<long> InsertAsync(Card card)
@@ -69,8 +68,28 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
 
         public async Task<Card> SelectSelectedCardByUserIdAsync(long userId)
         {
+            var card = await _appDbContext.Cards
+                  .FirstOrDefaultAsync(u => u.UserId == userId);
+
+            return card;
+        }
+        public async Task <ICollection<Card>> SelectCardsByUserIdAsync(long userId)
+        {
             return await _appDbContext.Cards
-                  .FirstOrDefaultAsync(c => c.UserId == userId);
+                .Where(c => c.User.UserId == userId)
+                .ToListAsync();
+        }
+        public async Task AssignCardsAsNotSelectedAsync(ICollection<Card> cards)
+        {
+            if (cards == null || cards.Count == 0)
+                return;
+
+            foreach (var card in cards)
+            {
+                card.SelectedForPayment = false;
+            }
+
+            await _appDbContext.SaveChangesAsync();
         }
     }
 }

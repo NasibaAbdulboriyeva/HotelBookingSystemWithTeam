@@ -3,7 +3,9 @@ using HotelBookingSystem.Application.Dtos.CardDtos;
 using HotelBookingSystem.Application.Dtos.HotelDtos;
 using HotelBookingSystem.Application.Dtos.PaymentDtos;
 using HotelBookingSystem.Application.Dtos.UserDtos;
+using HotelBookingSystem.Application.Mappings;
 using HotelBookingSystem.Application.RepositoryInterfaces;
+using HotelBookingSystem.Application.Services.CardServices;
 using HotelBookingSystem.Application.Services.TokenService;
 using HotelBookingSystem.Application.Validators.CardValidator;
 using HotelBookingSystem.Application.Validators.HotelValidator;
@@ -17,6 +19,12 @@ public static class DependicyInjectionConfigurations
 {
     public static void ConfigureDI(this WebApplicationBuilder builder)
     {
+        builder.Services.AddAutoMapper(typeof(CardMapper));
+        builder.Services.AddScoped<IValidator<CreateUserDto>, UserCreateValidator>();
+        builder.Services.AddScoped<IValidator<UserLoginDto>, UserLoginValidator>();
+        builder.Services.AddScoped<IValidator<CreateCardDto>, CardCreateValidator>();
+        builder.Services.AddScoped<IValidator<CreatePaymentDto>, PaymentCreateValidator>();
+        builder.Services.AddScoped<IValidator<CreateHotelDto>, HotelCreateValidator>();
         // builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
         builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -35,18 +43,13 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
         builder.Services.AddScoped<IRoleRepository, RoleRepository>();
         builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
-
-        // builder.Services.AddScoped<ICardRepository, CardRepository>();
+        builder.Services.AddScoped<ICardRepository, CardRepository>();
+        builder.Services.AddScoped<ICardService, CardService>();
 
         // builder.Services.AddScoped<IAuthService, AuthService>();
 
         builder.Services.AddScoped<ITokenService, TokenService>();
-
-        builder.Services.AddScoped<IValidator<CreateUserDto>, UserCreateValidator>();
-        builder.Services.AddScoped<IValidator<UserLoginDto>, UserLoginValidator>();
-        builder.Services.AddScoped<IValidator<CreateCardDto>, CardCreateValidator>();
-        builder.Services.AddScoped<IValidator<CreatePaymentDto>, PaymentCreateValidator>();
-        builder.Services.AddScoped<IValidator<CreateHotelDto>, HotelCreateValidator>();
+     
 
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

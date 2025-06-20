@@ -1,4 +1,6 @@
-﻿namespace HotelBookingSystem.Application.Dtos.BookingDtos;
+﻿using HotelBookingSystem.Application.Dtos.PaymentDtos;
+
+namespace HotelBookingSystem.Application.Dtos.BookingDtos;
 public class CreateBookingDto
 {
     public DateTime StartDate { get; set; }
