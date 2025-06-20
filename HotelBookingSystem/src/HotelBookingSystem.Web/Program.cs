@@ -10,8 +10,11 @@ namespace HotelBookingSystem.Web
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddProblemDetails();
 
             // Add services to the container.
+            builder.ConfigureSerilog();
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
