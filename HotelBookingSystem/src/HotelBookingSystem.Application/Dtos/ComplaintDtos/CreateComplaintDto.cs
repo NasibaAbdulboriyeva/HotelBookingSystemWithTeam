@@ -1,6 +1,11 @@
-﻿namespace HotelBookingSystem.Application.Dtos.ComplaintDtos;
+﻿using HotelBookingSystem.Domain.Enums;
+
+namespace HotelBookingSystem.Application.Dtos.ComplaintDtos;
 public class CreateComplaintDto
 {
-    public string Description { get; set; }
     public long HotelId { get; set; }
+    public long UserId { get; set; }
+    public string Message { get; set; }
+    
+
 }
