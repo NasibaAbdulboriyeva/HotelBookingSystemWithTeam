@@ -31,7 +31,7 @@ namespace HotelBookingSystem.Application.Services.CardServices
                 throw new ValidationException($"Validation failed: {errors}");
             }
 
-            var existingCards = await _cardRepository.SelectSelectedCardByUserIdAsync(createCardDto.UserId);
+            var existingCards = await _cardRepository.SelectCardByUserIdAsync(createCardDto.UserId);
 
 
             foreach (var card in existingCards)

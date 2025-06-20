@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using HotelBookingSystem.Application.Dtos.BookingDtos;
-using HotelBookingSystem.Application.Dtos.CardDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Core.Errors;
 using HotelBookingSystem.Domain.Entities;
@@ -21,58 +20,38 @@ namespace HotelBookingSystem.Application.Services.BookingService
         {
             ArgumentNullException.ThrowIfNull(createBookingDto);
             var convert = mapper.Map<Booking>(createBookingDto);
-            var id = await bookingRepository.InsertAsync(convert);
-            return id;
+
+            return await bookingRepository.InsertAsync(convert);
         }
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
             ArgumentNullException.ThrowIfNull(roomId);
-            var booking = GetByIdBookingAsync(roomId);
-            if(booking == null)
-            {
-                throw new EntityNotFoundException($"Booking not found");
-            }    
+            var booking = GetByIdBookingAsync(roomId);            
             var bookings = await bookingRepository.SelectActiveBookingsByRoomIdAsync(roomId);
-            List<BookingDto> result = new List<BookingDto>();
-            foreach(var book in bookings)
-            {
-                result.Add(mapper.Map<BookingDto>(bookings));
-            }
-            return result;
+
+            return mapper.Map<ICollection<BookingDto>>(bookings);
         }
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByUserIdAsync(long userId)
         {
-            var booking = GetByIdBookingAsync(userId);
-            if (booking == null)
-            {
-                throw new EntityNotFoundException($"Booking not found");
-            }
+            var booking = bookingRepository.SelectByIdAsync(userId);         
             var bookings = await bookingRepository.SelectActiveBookingsByUserIdAsync(userId);
-            List<BookingDto> dto = new List<BookingDto>();
-            foreach (var book in bookings)
-            {
-                dto.Add(mapper.Map<BookingDto>(bookings));
-            }
-            return dto;
+
+            return mapper.Map<ICollection<BookingDto>>(bookings);
         }
 
         public async Task<ICollection<BookingDto>> GetAllAsync()
         {
-           var booking = await bookingRepository.SelectAllAsync();
-           List<BookingDto> bookings = new List<BookingDto>();
-            foreach( var book in booking)
-            {
-                bookings.Add(mapper.Map<BookingDto>(bookings));
-            }
-            return bookings;
+            var booking = await bookingRepository.SelectAllAsync();            
+            return mapper.Map<ICollection<BookingDto>>(booking);
         }
 
         public async Task<BookingDto> GetByIdBookingAsync(long bookingID)
         {
             var booking = await bookingRepository.SelectByIdAsync(bookingID);
             var convert = mapper.Map<BookingDto>(booking);
+
             return convert;
         }
 
@@ -80,27 +59,20 @@ namespace HotelBookingSystem.Application.Services.BookingService
         {
             ArgumentNullException.ThrowIfNull(status);
             var booking = await bookingRepository.SelectByStatusAsync(status);
-            var result = new List<BookingDto>();
-            foreach(var book in booking)
-            {
-                result.Add(mapper.Map<BookingDto>(booking));
-            }
-            return result;
+
+            return mapper.Map<ICollection<BookingDto>>(booking);
         }
 
-        public async Task RemoveBookingAsync(long bookingID)
+        public async Task RemoveBookingAsync(long bookingId)
         {
-            var booking = await bookingRepository.RemoveAsync(bookingID);
-            if (booking == false)
-            {
-                throw new EntityNotFoundException($"Booking with that {bookingID} not found");
-            }
+            var booking = await bookingRepository.SelectByIdAsync(bookingId);
+            await bookingRepository.RemoveAsync(bookingId);
         }
 
         public async Task UpdateBookingAsync(BookingDto updateBookingDto)
         {
             var convert = mapper.Map<Booking>(updateBookingDto);
-             await bookingRepository.UpdateAsync(convert);
+            await bookingRepository.UpdateAsync(convert);
         }
     }
 }

@@ -23,16 +23,15 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             return booking.BookingId;
         }
 
-        public async Task<bool> RemoveAsync(long id)
+        public async Task RemoveAsync(long id)
         {
             var booking = await _context.Bookings.FindAsync(id);
             if (booking != null)
             {
                 _context.Bookings.Remove(booking);
                 await _context.SaveChangesAsync();
-                return true;
+                
             }
-            return false;
         }
 
         public async Task<ICollection<Booking>> SelectActiveBookingsByRoomIdAsync(long roomId)
