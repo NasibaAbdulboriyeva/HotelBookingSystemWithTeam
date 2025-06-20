@@ -37,17 +37,21 @@ public class ReviewService : IReviewService
         var review = _mapper.Map<Review>(createReviewDto);
         var hotelId = createReviewDto.HotelId;
 
-        await _reviewRepository.InsertAsync(review);
+        var insertedId = await _reviewRepository.InsertAsync(review);
 
-        return review.ReviewId;
+        return insertedId;
     }
 
     public async Task DeleteReviewAsync(long userId, long reviewId)
     {
-        var review = await GetReviewByIdAsync(reviewId);
+      var review = await _reviewRepository.SelectByIdAsync(reviewId);
+        if (review == null)
+        {
+            throw new NotFoundException($"Review with ID {reviewId} not found.");
+        }
         if (review.UserId != userId)
         {
-            throw new ForbiddenException("You can't delete someone else's review.");
+            throw new UnauthorizedException("You are not authorized to delete this review.");
         }
         await _reviewRepository.RemoveAsync(reviewId);
     }
