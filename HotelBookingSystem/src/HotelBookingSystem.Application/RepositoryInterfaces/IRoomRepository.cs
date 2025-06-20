@@ -10,5 +10,6 @@ public interface IRoomRepository
     Task<Room> SelectByNumberAsync(int roomNumber);
     Task<long> InsertAsync(Room room);
     Task UpdateAvailabilityAsync(long roomId, bool isAvailable);
+    Task UpdateAsync(Room room);
 }
 

@@ -9,5 +9,6 @@ public interface IUserRepository
     Task<ICollection<User>> SelectAllUsersAsync(int skip, int take);
     Task<long> InsertAsync(User user);
     Task UpdateAsync(User user);
+    Task RemoveAsync(long userId);
 }
 
