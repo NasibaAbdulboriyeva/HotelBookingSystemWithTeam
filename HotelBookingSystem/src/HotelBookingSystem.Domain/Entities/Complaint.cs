@@ -14,4 +14,6 @@ public class Complaint
 
     public long HotelId { get; set; }
     public Hotel Hotel { get; set; }
+
+
 }

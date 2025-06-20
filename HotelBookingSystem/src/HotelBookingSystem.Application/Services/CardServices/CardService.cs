@@ -81,11 +81,8 @@ namespace HotelBookingSystem.Application.Services.CardServices
         public async Task<ICollection<CardDto>> GetCardsByUserIdAsync(long userId)
         {
             var allCards = await _cardRepository.SelectCardsByUserIdAsync(userId);
-            var cardGetDtos = allCards
-            .Select(card => _mapper.Map<CardDto>(card))
-            .ToList();
 
-            return cardGetDtos;
+            return _mapper.Map<ICollection<CardDto>>(allCards);
         }
 
         public async Task SelectCardForPaymentAsync(long cardId, long userId)
