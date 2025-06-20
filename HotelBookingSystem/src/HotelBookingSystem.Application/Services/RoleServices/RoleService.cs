@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using HotelBookingSystem.Application.Dtos.RoleDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace HotelBookingSystem.Application.Services.RoleServices
 {
@@ -15,30 +12,43 @@ namespace HotelBookingSystem.Application.Services.RoleServices
 
         private readonly IRoleRepository _roleRepository;
         private readonly IMapper _mapper;
+        private readonly IValidator<CreateRoleDto> _createRoleValidator;
 
-        public RoleService(IRoleRepository roleRepository, IMapper mapper)
+        public RoleService(IRoleRepository roleRepository, IMapper mapper, IValidator<CreateRoleDto> createRoleValidator)
         {
             _roleRepository = roleRepository;
             _mapper = mapper;
+            _createRoleValidator = createRoleValidator;
         }
 
-        public async Task<long> CreateRoleAsync(Role role)
+        public async Task<long> CreateRoleAsync(CreateRoleDto createRoleDto)
         {
-            if (string.IsNullOrWhiteSpace(role.RoleName))
-                throw new ArgumentException("Role name cannot be empty.");
+            ArgumentNullException.ThrowIfNull(createRoleDto);
 
-            var existingRole = await _roleRepository.SelectByNameAsync(role.RoleName);
+            var validationResult = await _createRoleValidator.ValidateAsync(createRoleDto);
+            if (!validationResult.IsValid)
+            {
+                var errors = string.Join("; ", validationResult.Errors.Select(e => e.ErrorMessage));
+                throw new ValidationException($"Validation failed: {errors}");
+            }
+
+            var existingRole = await _roleRepository.SelectByNameAsync(createRoleDto.RoleName);
             if (existingRole != null)
+            {
                 throw new InvalidOperationException("Role with this name already exists.");
+            }
 
-            return await _roleRepository.InsertAsync(role);
+            var roleEntity = _mapper.Map<Role>(createRoleDto);
+            return await _roleRepository.InsertAsync(roleEntity);
         }
 
         public async Task DeleteRoleAsync(long roleId)
         {
             var role = await _roleRepository.SelectByIdAsync(roleId);
             if (role == null)
+            {
                 throw new KeyNotFoundException("Role not found.");
+            }
 
             await _roleRepository.RemoveAsync(roleId);
         }
@@ -53,7 +63,9 @@ namespace HotelBookingSystem.Application.Services.RoleServices
         {
             var role = await _roleRepository.SelectByIdAsync(roleId);
             if (role == null)
+            {
                 throw new KeyNotFoundException("Role not found.");
+            }
 
             return _mapper.Map<RoleDto>(role);
         }
@@ -62,19 +74,25 @@ namespace HotelBookingSystem.Application.Services.RoleServices
         {
             var role = await _roleRepository.SelectByNameAsync(roleName);
             if (role == null)
+            {
                 throw new KeyNotFoundException("Role not found.");
+            }
 
             return _mapper.Map<RoleDto>(role);
         }
 
-        public async Task UpdateRoleAsync(Role roleId)
+        public async Task UpdateRoleAsync(RoleDto roleDto)
         {
-            if (string.IsNullOrWhiteSpace(roleId.RoleName))
+            if (string.IsNullOrWhiteSpace(roleDto.RoleName))
+            {
                 throw new ArgumentException("Role name cannot be empty.");
+            }
 
-            var role = await _roleRepository.SelectByIdAsync(roleId.RoleId);
+            var role = await _roleRepository.SelectByIdAsync(roleDto.RoleId);
             if (role == null)
+            {
                 throw new KeyNotFoundException("Role not found.");
+            }
 
             await _roleRepository.UpdateAsync(role);
         }
