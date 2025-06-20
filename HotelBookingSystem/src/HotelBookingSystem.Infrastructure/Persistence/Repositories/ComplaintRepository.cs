@@ -52,9 +52,8 @@ public class ComplaintRepository : IComplaintRepository
             .ToListAsync();
     }
 
-    public async Task UpdateStatusAsync(long complaintId)
+    public async Task UpdateAsync(Complaint complaint)
     {
-        var complaint = await SelectByIdAsync(complaintId);
 
         _context.Update(complaint);
         await _context.SaveChangesAsync();
@@ -62,5 +61,13 @@ public class ComplaintRepository : IComplaintRepository
     public async Task<ICollection<Complaint>> SelectAllAsync()
     {
         return await _context.Complaints.ToListAsync();
+    }
+
+    public async  Task RemoveAsync(long complaintId)
+    {
+        var complaint = await _context.Complaints.FirstOrDefaultAsync(c => c.ComplaintId == complaintId);
+
+        _context.Complaints.Remove(complaint);
+        await _context.SaveChangesAsync();
     }
 }

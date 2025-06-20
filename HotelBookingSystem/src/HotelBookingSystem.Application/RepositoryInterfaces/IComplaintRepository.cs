@@ -10,5 +10,6 @@ public interface IComplaintRepository
     Task<ICollection<Complaint>> SelectAllAsync();
     Task<long> InsertAsync(Complaint complaint);
     Task<ICollection<Complaint>> SelectByStatusAsync(ComplaintStatus status);
-    Task UpdateStatusAsync(long complaintId);
+    Task UpdateAsync(Complaint complaint);
+    Task RemoveAsync(long complaintId);
 }
