@@ -80,8 +80,12 @@ namespace HotelBookingSystem.Application.Services.BookingService
         {
             ArgumentNullException.ThrowIfNull(status);
             var booking = await bookingRepository.SelectByStatusAsync(status);
-            List BookingDto = new List<BookingDto>();
-
+            var result = new List<BookingDto>();
+            foreach(var book in booking)
+            {
+                result.Add(mapper.Map<BookingDto>(booking));
+            }
+            return result;
         }
 
         public async Task RemoveBookingAsync(long bookingID)
