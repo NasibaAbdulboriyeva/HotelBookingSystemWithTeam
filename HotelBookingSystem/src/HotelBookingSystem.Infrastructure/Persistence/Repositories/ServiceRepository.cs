@@ -49,4 +49,11 @@ public class ServiceRepository : IServiceRepository
         _context.Services.Update(service);
         await _context.SaveChangesAsync();
     }
+
+    public async Task RemoveAsync(long serviceId)
+    {
+        var service = await SelectByIdAsync(serviceId);
+        _context.Services.Remove(service);
+        await _context.SaveChangesAsync();
+    }
 }
