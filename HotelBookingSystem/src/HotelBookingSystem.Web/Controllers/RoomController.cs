@@ -1,12 +1,10 @@
-﻿using HotelBookingSystem.Application.Dtos.CardDtos;
-using HotelBookingSystem.Application.Dtos.RoomDtos;
-using HotelBookingSystem.Application.Services.CardServices;
+﻿using HotelBookingSystem.Application.Dtos.RoomDtos;
 using HotelBookingSystem.Application.Services.RoomServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelBookingSystem.Web.Controllers
 {
-    [Route("api/card")]
+    [Route("api/room")]
     [ApiController]
     public class RoomController : ControllerBase
     {
