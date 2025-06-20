@@ -1,41 +1,24 @@
 ﻿using AutoMapper;
-using FluentValidation;
-using HotelBookingSystem.Application.Dtos.CardDtos;
 using HotelBookingSystem.Application.Dtos.RoomDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelBookingSystem.Application.Services.RoomServices
 {
     public class RoomService : IRoomService
     {
-
         private readonly IRoomRepository _roomRepository;
         private readonly IMapper _mapper;
-        private readonly IValidator<CreateRoomDto> _createRoomDtoValidator;
 
-        public RoomService(IRoomRepository roomRepository, IMapper mapper, IValidator<CreateRoomDto> createRoomDtoValidator)
+        public RoomService(IRoomRepository roomRepository, IMapper mapper)
         {
             _roomRepository = roomRepository;
             _mapper = mapper;
-            _createRoomDtoValidator = createRoomDtoValidator;
         }
 
         public async Task<long> CreateRoomAsync(CreateRoomDto newRoom)
         {
             ArgumentNullException.ThrowIfNull(newRoom);
-
-            var validationResult = await _createRoomDtoValidator.ValidateAsync(newRoom);
-            if (!validationResult.IsValid)
-            {
-                var errors = string.Join("; ", validationResult.Errors.Select(e => e.ErrorMessage));
-                throw new ValidationException($"The information of this room is incorrect: {errors}");
-            }
 
             var roomEntity = _mapper.Map<Room>(newRoom);
             return await _roomRepository.InsertAsync(roomEntity);
@@ -50,7 +33,7 @@ namespace HotelBookingSystem.Application.Services.RoomServices
             }
 
             existingRoom.IsDeleted = true;
-            existingRoom.IsAvailable = false;  
+            existingRoom.IsAvailable = false;
             await _roomRepository.UpdateAsync(existingRoom);
         }
 
@@ -79,25 +62,25 @@ namespace HotelBookingSystem.Application.Services.RoomServices
             return _mapper.Map<RoomDto>(room);
         }
 
-        public async Task UpdateRoomAsync(long roomId, CreateRoomDto updatedRoom)
-        {
-            ArgumentNullException.ThrowIfNull(updatedRoom);
 
-            var validationResult = await _createRoomDtoValidator.ValidateAsync(updatedRoom);
-            if (!validationResult.IsValid)
+
+        public async Task UpdateRoomAsync(RoomDto roomDto)
+        {
+            if (roomDto == null)
             {
-                var errors = string.Join("; ", validationResult.Errors.Select(e => e.ErrorMessage));
-                throw new ValidationException($"The information of this room is incorrect: {errors}");
+                throw new ArgumentNullException(nameof(roomDto));
             }
 
-            var existingRoom = await _roomRepository.SelectByIdAsync(roomId);
+            var existingRoom = await _roomRepository.SelectByIdAsync(roomDto.RoomId);
             if (existingRoom == null || existingRoom.IsDeleted)
             {
                 throw new InvalidOperationException("Room not found.");
             }
 
-            _mapper.Map(updatedRoom, existingRoom); 
+            _mapper.Map(roomDto, existingRoom);
+
             await _roomRepository.UpdateAsync(existingRoom);
         }
+
     }
 }
