@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HotelBookingSystem.Core\HotelBookingSystem.Core.csproj" />
     <ProjectReference Include="..\HotelBookingSystem.Domain\HotelBookingSystem.Domain.csproj" />
   </ItemGroup>
 
