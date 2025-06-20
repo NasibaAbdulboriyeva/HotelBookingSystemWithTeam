@@ -26,8 +26,7 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
-            ArgumentNullException.ThrowIfNull(roomId);
-            var booking = GetByIdBookingAsync(roomId);            
+            ArgumentNullException.ThrowIfNull(roomId);           
             var bookings = await bookingRepository.SelectActiveBookingsByRoomIdAsync(roomId);
 
             return mapper.Map<ICollection<BookingDto>>(bookings);
