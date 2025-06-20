@@ -1,8 +1,5 @@
-﻿using HotelBookingSystem.Application.Dtos.CardDtos;
-using HotelBookingSystem.Application.Dtos.ReviewDtos;
-using HotelBookingSystem.Application.Services.CardServices;
+﻿using HotelBookingSystem.Application.Dtos.ReviewDtos;
 using HotelBookingSystem.Application.Services.ReviewService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelBookingSystem.Web.Controllers;
@@ -20,7 +17,7 @@ public class ReviewController : ControllerBase
     [HttpPost("create")]
     public async Task<long> Create(CreateReviewDto createReviewDto)
     {
-       return await _reviewService.CreateReviewAsync(createReviewDto);
+        return await _reviewService.CreateReviewAsync(createReviewDto);
     }
 
     [HttpDelete("delete")]
