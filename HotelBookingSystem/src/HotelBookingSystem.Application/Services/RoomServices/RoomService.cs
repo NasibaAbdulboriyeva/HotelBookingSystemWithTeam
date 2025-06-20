@@ -51,7 +51,7 @@ namespace HotelBookingSystem.Application.Services.RoomServices
 
             existingRoom.IsDeleted = true;
             existingRoom.IsAvailable = false;  
-            await _roomRepository.UpdateAvailabilityAsync(existingRoom.RoomId, false);
+            await _roomRepository.UpdateAsync(existingRoom);
         }
 
         public async Task<IEnumerable<RoomDto>> GetAllRoomsAsync()
@@ -97,7 +97,7 @@ namespace HotelBookingSystem.Application.Services.RoomServices
             }
 
             _mapper.Map(updatedRoom, existingRoom); 
-            await _roomRepository.UpdateAvailabilityAsync(existingRoom.RoomId,existingRoom.IsAvailable);
+            await _roomRepository.UpdateAsync(existingRoom);
         }
     }
 }
