@@ -22,7 +22,6 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
             return await bookingRepository.InsertAsync(bookingEntity);
         }
-
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
             ArgumentNullException.ThrowIfNull(roomId);
