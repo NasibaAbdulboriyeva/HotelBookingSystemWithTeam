@@ -1,7 +1,6 @@
 
 using HotelBookingSystem.Web.Configurations;
 using HotelBookingSystem.Web.Middlewares;
-using UserContacts.Web.Configurations;
 
 namespace HotelBookingSystem.Web
 {

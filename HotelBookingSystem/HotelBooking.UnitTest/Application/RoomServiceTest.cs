@@ -29,8 +29,7 @@ public class RoomServiceTest
 
         _roomService = new RoomService(
             _roomRepository.Object,
-            _mapper,
-         _createRoomDtoValidator.Object
+            _mapper
         );
     }
 
