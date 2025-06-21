@@ -34,7 +34,7 @@ namespace HotelBookingSystem.Web.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpGet("getAllUsers")]
-        public async Task<ICollection<UserDto>> GetAllUsersAsync([FromQuery] int skip, int take)
+        public async Task<ICollection<UserDto>> GetAllUsersAsync(int skip, int take)
         {
             return await UserService.GetAllUsersAsync(skip, take);
         }
@@ -48,7 +48,7 @@ namespace HotelBookingSystem.Web.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpDelete("deleteUser")]
-        public async Task DeleteUserAsync([FromQuery] long userId)
+        public async Task DeleteUserAsync(long userId)
         {
             var role = User.FindFirst(ClaimTypes.Role)?.Value;
             await UserService.DeleteUserAsync(userId);
