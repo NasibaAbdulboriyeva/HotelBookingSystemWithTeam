@@ -57,7 +57,7 @@ namespace HotelBookingSystem.Web.Controllers
             await bookingService.DeleteBookingAsync(bookingId);
         }
 
-        [HttpDelete("GetAll")]
+        [HttpGet("GetAll")]
         public async Task UpdateBookingAsync(BookingDto updateBookingDto)
         {
             await bookingService.UpdateBookingAsync(updateBookingDto);
