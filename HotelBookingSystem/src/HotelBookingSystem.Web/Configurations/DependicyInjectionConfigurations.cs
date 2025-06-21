@@ -4,8 +4,8 @@ using HotelBookingSystem.Application.Dtos.CardDtos;
 using HotelBookingSystem.Application.Dtos.HotelDtos;
 using HotelBookingSystem.Application.Dtos.PaymentDtos;
 using HotelBookingSystem.Application.Dtos.UserDtos;
-using HotelBookingSystem.Application.Mappings;
 using HotelBookingSystem.Application.RepositoryInterfaces;
+using HotelBookingSystem.Application.Services.AffairService;
 using HotelBookingSystem.Application.Services.AuthService;
 using HotelBookingSystem.Application.Services.CardServices;
 using HotelBookingSystem.Application.Services.ComplaintService;
@@ -18,7 +18,7 @@ using HotelBookingSystem.Application.Validators.UserValidator;
 using HotelBookingSystem.Infrastructure;
 using HotelBookingSystem.Infrastructure.Persistence.Repositories;
 
-namespace UserContacts.Web.Configurations;
+namespace HotelBookingSystem.Web.Configurations;
 
 public static class DependicyInjectionConfigurations
 {
@@ -38,7 +38,7 @@ public static class DependicyInjectionConfigurations
         //builder.Services.AddScoped<IUserService, UserService>();
 
         builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
-         //builder.Services.AddScoped<IUserRoleService, UserRoleService>();
+        //builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
         builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
@@ -64,7 +64,7 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<ITokenService, TokenService>();
         builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         builder.Services.AddScoped<IAuthService, AuthService>();
-     
+        builder.Services.AddScoped<IAffairService, AffairService>();
 
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

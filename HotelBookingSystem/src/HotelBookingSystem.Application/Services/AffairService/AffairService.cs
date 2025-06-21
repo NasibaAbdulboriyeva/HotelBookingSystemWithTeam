@@ -37,23 +37,23 @@ public class AffairService : IAffairService
         return services.Select(_mapper.Map<ServiceDto>).ToList();
     }
 
-    public async Task<long> CreateAsync(CreateServiceDto dto)
+    public async Task<long> CreateAsync(CreateServiceDto craeteServiceDto)
     {
-        ArgumentNullException.ThrowIfNull(dto);
+        ArgumentNullException.ThrowIfNull(craeteServiceDto);
 
-        var service = _mapper.Map<Service>(dto);
+        var service = _mapper.Map<Service>(craeteServiceDto);
         return await _serviceRepository.InsertAsync(service);
     }
 
-    public async Task UpdateAsync(ServiceDto dto)
+    public async Task UpdateAsync(ServiceDto updateServiceDto)
     {
-        ArgumentNullException.ThrowIfNull(dto);
+        ArgumentNullException.ThrowIfNull(updateServiceDto);
 
-        var existing = await _serviceRepository.SelectByIdAsync(dto.ServiceId);
+        var existing = await _serviceRepository.SelectByIdAsync(updateServiceDto.ServiceId);
         if (existing == null)
             throw new InvalidOperationException("Service not found.");
 
-        _mapper.Map(dto, existing);
+        _mapper.Map(updateServiceDto, existing);
 
         await _serviceRepository.UpdateAsync(existing);
     }

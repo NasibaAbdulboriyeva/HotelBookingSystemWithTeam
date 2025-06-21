@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using HotelBookingSystem.Application.Dtos.BookingDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
-using HotelBookingSystem.Core.Errors;
 using HotelBookingSystem.Domain.Entities;
 using HotelBookingSystem.Domain.Enums;
 
@@ -26,7 +25,7 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
-            ArgumentNullException.ThrowIfNull(roomId);           
+            ArgumentNullException.ThrowIfNull(roomId);
             var bookings = await bookingRepository.SelectActiveBookingsByRoomIdAsync(roomId);
 
             return mapper.Map<ICollection<BookingDto>>(bookings);
@@ -34,7 +33,7 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
         public async Task<ICollection<BookingDto>> GetActiveBookingsByUserIdAsync(long userId)
         {
-            var booking = bookingRepository.SelectByIdAsync(userId);         
+            var booking = bookingRepository.SelectByIdAsync(userId);
             var bookings = await bookingRepository.SelectActiveBookingsByUserIdAsync(userId);
 
             return mapper.Map<ICollection<BookingDto>>(bookings);
@@ -42,7 +41,7 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
         public async Task<ICollection<BookingDto>> GetAllAsync()
         {
-            var bookings = await bookingRepository.SelectAllAsync();            
+            var bookings = await bookingRepository.SelectAllAsync();
             return mapper.Map<ICollection<BookingDto>>(bookings);
         }
 

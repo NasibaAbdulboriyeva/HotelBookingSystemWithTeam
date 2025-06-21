@@ -2,19 +2,11 @@
 using FluentValidation;
 using HotelBookingSystem.Application.Dtos.LoginResponseDto;
 using HotelBookingSystem.Application.Dtos.UserDtos;
-using HotelBookingSystem.Application.Mappings;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Application.Services.Helpers.Security;
 using HotelBookingSystem.Application.Services.TokenService;
-using HotelBookingSystem.Application.Validators.UserValidator;
 using HotelBookingSystem.Core.Errors;
 using HotelBookingSystem.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelBookingSystem.Application.Services.AuthService
 {

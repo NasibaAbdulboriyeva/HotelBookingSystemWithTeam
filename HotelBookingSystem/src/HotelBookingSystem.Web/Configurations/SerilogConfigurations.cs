@@ -1,6 +1,6 @@
 ﻿using Serilog;
 
-namespace UserContacts.Web.Configurations;
+namespace HotelBookingSystem.Web.Configurations;
 
 public static class SerilogConfigurations
 {
