@@ -1,15 +1,12 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using HotelBookingSystem.Application.Dtos.CardDtos;
 using HotelBookingSystem.Application.Dtos.ComplaintDtos;
 using HotelBookingSystem.Application.Dtos.HotelDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Core.Errors;
 using HotelBookingSystem.Domain.Entities;
 using HotelBookingSystem.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelBookingSystem.Application.Services.HotelService
 {
@@ -17,19 +14,32 @@ namespace HotelBookingSystem.Application.Services.HotelService
     {
         private readonly IHotelRepository _hotelRepository;
         private readonly IMapper _mapper;
+        private readonly IValidator<CreateHotelDto> _createHotelDtoValidator;
 
-        public HotelService(IHotelRepository hotelRepository, IMapper mapper)
+        public HotelService(
+            IHotelRepository hotelRepository,
+            IMapper mapper,
+            IValidator<CreateHotelDto> createHotelDtoValidator)
         {
             _hotelRepository = hotelRepository;
             _mapper = mapper;
+            _createHotelDtoValidator = createHotelDtoValidator;
         }
 
         public async Task<long> AddAsync(CreateHotelDto createHotelDto)
         {
             ArgumentNullException.ThrowIfNull(createHotelDto);
+
+            var validationResult = await _createHotelDtoValidator.ValidateAsync(createHotelDto);
+            if (!validationResult.IsValid)
+                throw new ValidationException(validationResult.Errors);
+
             var hotel = _mapper.Map<Hotel>(createHotelDto);
-         
-            return await _hotelRepository.InsertAsync(hotel);
+
+            await _hotelRepository.InsertAsync(hotel);
+            await _hotelRepository.SaveChangesAsync();
+
+            return hotel.HotelId;
         }
 
         public async Task<ICollection<HotelDto>> GetAllAsync()
@@ -42,9 +52,7 @@ namespace HotelBookingSystem.Application.Services.HotelService
         {
             var hotel = await _hotelRepository.SelectByIdAsync(id);
             if (hotel == null)
-            {
-                throw new EntityNotFoundException("Complaint not found.");
-            }
+                throw new EntityNotFoundException("Hotel not found.");
 
             return _mapper.Map<HotelDto>(hotel);
         }
@@ -59,23 +67,22 @@ namespace HotelBookingSystem.Application.Services.HotelService
         {
             var hotel = await _hotelRepository.SelectByIdAsync(id);
             if (hotel == null)
-            {
-                throw new EntityNotFoundException("Complaint not found.");
-            }
-
+                throw new EntityNotFoundException("Hotel not found.");
 
             await _hotelRepository.RemoveAsync(id);
+            await _hotelRepository.SaveChangesAsync(); // Qo‘shildi
         }
 
-        public async Task UpdateAsync(HotelDto hotelDto)
+        public async Task UpdateAsync(HotelUpdateDto hotelDto)
         {
             var hotel = await _hotelRepository.SelectByIdAsync(hotelDto.HotelId);
             if (hotel == null)
-            {
-                throw new EntityNotFoundException("Complaint not found.");
-            }
+                throw new EntityNotFoundException("Hotel not found.");
+
+            _mapper.Map(hotelDto, hotel);
 
             await _hotelRepository.UpdateAsync(hotel);
+            await _hotelRepository.SaveChangesAsync(); // Qo‘shildi
         }
     }
 }

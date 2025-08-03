@@ -12,5 +12,6 @@ public interface IPaymentRepository
     Task<long> InsertAsync(Payment payment);
     Task UpdateAsync(Payment payment);
     Task RemoveAsync(long paymentId);
+    Task<int> SaveChangesAsync();
 }
 

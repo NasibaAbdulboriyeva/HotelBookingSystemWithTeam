@@ -9,5 +9,6 @@ public interface IReviewRepository
     Task<ICollection<Review>> SelectAllAsync();
     Task<long> InsertAsync(Review review);
     Task RemoveAsync(long reviewId);
+    Task<int> SaveChangesAsync();
 }
 

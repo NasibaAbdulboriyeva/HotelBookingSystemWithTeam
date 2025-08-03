@@ -9,7 +9,7 @@ namespace HotelBookingSystem.Application.Services.RoomServices
         Task<IEnumerable<RoomDto>> GetAllRoomsAsync();
         Task<IEnumerable<RoomDto>> GetAvailableRoomsAsync();
         Task<long> CreateRoomAsync(CreateRoomDto newRoom);
-        Task UpdateRoomAsync(RoomDto roomDto);
+        Task UpdateRoomAsync(RoomUpdateDto roomDto);
         Task DeleteRoomAsync(long roomId);
     }
 }

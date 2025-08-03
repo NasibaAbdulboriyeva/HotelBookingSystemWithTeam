@@ -14,8 +14,7 @@ public class HotelRepository : IHotelRepository
 
     public async Task<long> InsertAsync(Hotel hotel)
     {
-        _context.Hotels.Add(hotel);
-        await _context.SaveChangesAsync();
+        await _context.Hotels.AddAsync(hotel);
         return hotel.HotelId;
     }
 
@@ -23,7 +22,6 @@ public class HotelRepository : IHotelRepository
     {
         var hotel = await SelectByIdAsync(id);
         _context.Hotels.Remove(hotel);
-        await _context.SaveChangesAsync();
     }
 
     public async Task<ICollection<Hotel>> SelectAllAsync()
@@ -51,6 +49,9 @@ public class HotelRepository : IHotelRepository
     public async Task UpdateAsync(Hotel hotel)
     {
         _context.Hotels.Update(hotel);
-        await _context.SaveChangesAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

@@ -7,7 +7,7 @@ namespace HotelBookingSystem.Application.Services.BookingService
     public interface IBookingService
     {
         Task<long> CreateBookingAsync(CreateBookingDto createBookingDto);
-        Task UpdateBookingAsync(BookingDto updateBookingDto);
+        Task UpdateBookingAsync(BookingUpdateDto updateBookingDto);
         Task DeleteBookingAsync(long bookingId);
         Task<BookingDto> GetByIdBookingAsync(long bookingID);
         Task<ICollection<BookingDto>> GetAllAsync();

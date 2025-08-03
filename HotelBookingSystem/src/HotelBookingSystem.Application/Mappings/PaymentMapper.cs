@@ -8,6 +8,7 @@ public class PaymentMapper : Profile
     public PaymentMapper()
     {
         CreateMap<Payment, PaymentDto>().ReverseMap();
+        CreateMap<Payment, PaymentUpdateDto>().ReverseMap();
         CreateMap<Payment, CreatePaymentDto>().ReverseMap();
     }
 }

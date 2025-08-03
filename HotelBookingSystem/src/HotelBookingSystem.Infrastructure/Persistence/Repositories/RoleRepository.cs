@@ -14,8 +14,7 @@ public class RoleRepository : IRoleRepository
 
     public async Task<long> InsertAsync(Role role)
     {
-        _context.Roles.Add(role);
-        await _context.SaveChangesAsync();
+        await _context.Roles.AddAsync(role);
         return role.RoleId;
     }
 
@@ -23,7 +22,6 @@ public class RoleRepository : IRoleRepository
     {
         var role = await SelectByIdAsync(roleId);
         _context.Roles.Remove(role);
-        await _context.SaveChangesAsync();
     }
 
     public async Task<Role> SelectByIdAsync(long roleId)
@@ -51,10 +49,13 @@ public class RoleRepository : IRoleRepository
     public async Task UpdateAsync(Role role)
     {
         _context.Roles.Update(role);
-        await _context.SaveChangesAsync();
     }
     public async Task<ICollection<Role>> SelectAllAsync()
     {
         return await _context.Roles.ToListAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

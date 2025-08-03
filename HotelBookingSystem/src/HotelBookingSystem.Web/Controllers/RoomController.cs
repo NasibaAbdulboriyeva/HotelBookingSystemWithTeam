@@ -40,7 +40,7 @@ namespace HotelBookingSystem.Web.Controllers
         }
 
         [HttpPut("updateRoom")]
-        public async Task UpdateRoomAsync(RoomDto updatedRoom)
+        public async Task UpdateRoomAsync(RoomUpdateDto updatedRoom)
         {
             await RoomService.UpdateRoomAsync(updatedRoom);
         }

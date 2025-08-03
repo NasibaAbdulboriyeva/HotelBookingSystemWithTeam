@@ -8,6 +8,7 @@ public class ServiceMapper : Profile
     public ServiceMapper()
     {
         CreateMap<Service, ServiceDto>().ReverseMap();
+        CreateMap<Service, ServiceUpdateDto>().ReverseMap();
         CreateMap<Service, CreateServiceDto>().ReverseMap();
     }
 }

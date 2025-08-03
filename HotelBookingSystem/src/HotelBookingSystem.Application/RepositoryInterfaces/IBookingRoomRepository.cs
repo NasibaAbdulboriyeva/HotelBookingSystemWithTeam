@@ -10,5 +10,6 @@ public interface IBookingRoomRepository
     Task<long> InsertAsync(BookingRoom bookingRoom);
     Task UpdateAsync(BookingRoom bookingRoom);
     Task RemoveAsync(BookingRoom bookingRoom);
+    Task<int> SaveChangesAsync();
 }
 

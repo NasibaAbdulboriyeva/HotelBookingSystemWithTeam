@@ -15,8 +15,7 @@ public class ComplaintRepository : IComplaintRepository
 
     public async Task<long> InsertAsync(Complaint complaint)
     {
-        _context.Complaints.Add(complaint);
-        await _context.SaveChangesAsync();
+       await  _context.Complaints.AddAsync(complaint);
         return complaint.ComplaintId;
     }
 
@@ -56,18 +55,20 @@ public class ComplaintRepository : IComplaintRepository
     {
 
         _context.Update(complaint);
-        await _context.SaveChangesAsync();
     }
     public async Task<ICollection<Complaint>> SelectAllAsync()
     {
         return await _context.Complaints.ToListAsync();
     }
 
-    public async  Task RemoveAsync(long complaintId)
+    public async Task RemoveAsync(long complaintId)
     {
         var complaint = await _context.Complaints.FirstOrDefaultAsync(c => c.ComplaintId == complaintId);
 
         _context.Complaints.Remove(complaint);
-        await _context.SaveChangesAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

@@ -11,7 +11,8 @@ public class Complaint
 
     public long UserId { get; set; }
     public User User { get; set; }
-
+    public long BookingId { get; set; }
+    public Booking Booking { get; set; }
     public long HotelId { get; set; }
     public Hotel Hotel { get; set; }
 

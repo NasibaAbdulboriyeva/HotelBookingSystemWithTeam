@@ -16,4 +16,6 @@ public class Booking
     public User User { get; set; }
 
     public List<BookingRoom> BookingRooms { get; set; } = new List<BookingRoom>();
+    public List<Complaint> Complaints { get; set; } = new List<Complaint>();
+
 }

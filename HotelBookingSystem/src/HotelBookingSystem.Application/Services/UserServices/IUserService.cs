@@ -7,7 +7,7 @@ namespace HotelBookingSystem.Application.Services.UserServices
         Task<long> CreateUserAsync(CreateUserDto createUserDto);
         Task<UserDto> GetUserByIdAsync(long userId);
         Task<ICollection<UserDto>> GetAllUsersAsync(int skip, int take);
-        Task UpdateUserAsync(UserDto userDto);
+        Task UpdateUserAsync(UserUpdateDto userDto);
         Task DeleteUserAsync(long userId);
     }
 }

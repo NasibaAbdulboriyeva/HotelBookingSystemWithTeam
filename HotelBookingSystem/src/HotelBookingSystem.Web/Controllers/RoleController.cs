@@ -40,7 +40,7 @@ namespace HotelBookingSystem.Web.Controllers
         }
 
         [HttpPut("update")]
-        public Task UpdateRoleAsync(RoleDto roleDto)
+        public Task UpdateRoleAsync(RoleUpdateDto roleDto)
         {
             return _roleService.UpdateRoleAsync(roleDto);
         }

@@ -8,4 +8,5 @@ public interface IRefreshTokenRepository
     Task<RefreshToken> SelectRefreshTokenAsync(string refreshToken, long userId);
     Task RemoveRefreshTokenAsync(string token);
     Task UpdateRefreshTokenAsync(RefreshToken refreshToken);
+    Task<int> SaveChangesAsync();
 }

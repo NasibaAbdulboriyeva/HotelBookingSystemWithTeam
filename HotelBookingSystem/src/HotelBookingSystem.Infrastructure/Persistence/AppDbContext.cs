@@ -23,6 +23,11 @@ namespace HotelBookingSystem.Infrastructure.Persistence
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<RoomPhoto> RoomPhotos { get; set; }
+        public DbSet<RoomType> RoomTypes { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
