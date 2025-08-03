@@ -33,7 +33,6 @@ namespace HotelBookingSystem.Application.Services.BookingService
 
             return bookingEntity.BookingId;
         }
-
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
             ArgumentNullException.ThrowIfNull(roomId);
