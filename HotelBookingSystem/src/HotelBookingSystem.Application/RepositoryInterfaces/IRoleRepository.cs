@@ -9,4 +9,5 @@ public interface IRoleRepository
     Task<ICollection<Role>> SelectAllAsync();
     Task UpdateAsync(Role role);
     Task RemoveAsync(long roleId);
+    Task<int> SaveChangesAsync();
 }

@@ -40,20 +40,21 @@ public class ServiceRepository : IServiceRepository
     public async Task<long> InsertAsync(Service service)
     {
         await _context.Services.AddAsync(service);
-        await _context.SaveChangesAsync();
         return service.ServiceId;
     }
 
     public async Task UpdateAsync(Service service)
     {
         _context.Services.Update(service);
-        await _context.SaveChangesAsync();
     }
 
     public async Task RemoveAsync(long serviceId)
     {
         var service = await SelectByIdAsync(serviceId);
         _context.Services.Remove(service);
-        await _context.SaveChangesAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

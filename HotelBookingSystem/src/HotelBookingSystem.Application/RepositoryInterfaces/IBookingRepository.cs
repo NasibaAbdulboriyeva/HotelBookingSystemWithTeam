@@ -12,5 +12,6 @@ public interface IBookingRepository
     Task<long> InsertAsync(Booking booking);
     Task UpdateAsync(Booking booking);
     Task RemoveAsync(long id);
+    Task<int> SaveChangesAsync();
 }
 

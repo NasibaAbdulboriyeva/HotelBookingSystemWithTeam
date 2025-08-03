@@ -8,6 +8,7 @@ public class CardMapper : Profile
     public CardMapper()
     {
         CreateMap<Card, CardDto>().ReverseMap();
+        CreateMap<Card, CardUpdateDto>().ReverseMap();
         CreateMap<Card, CreateCardDto>().ReverseMap();
     }
 }

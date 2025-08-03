@@ -8,6 +8,6 @@ public interface IAffairService
     Task<ICollection<ServiceDto>> GetByHotelIdAsync(long hotelId);
     Task<ICollection<ServiceDto>> GetAllAsync();
     Task<long> CreateAsync(CreateServiceDto dto);
-    Task UpdateAsync(ServiceDto dto);
+    Task UpdateAsync(ServiceUpdateDto dto);
     Task DeleteAsync(long id);
 }

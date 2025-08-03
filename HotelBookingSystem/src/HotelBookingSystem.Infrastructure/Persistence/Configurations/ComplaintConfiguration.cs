@@ -24,12 +24,17 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Configurations
             builder.HasOne(c => c.User)
                 .WithMany(u => u.Complaints)
                 .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(c => c.Hotel)
                 .WithMany(h => h.Complaints)
                 .HasForeignKey(c => c.HotelId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(c => c.Booking)
+                .WithMany(b => b.Complaints)
+                .HasForeignKey(c => c.BookingId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

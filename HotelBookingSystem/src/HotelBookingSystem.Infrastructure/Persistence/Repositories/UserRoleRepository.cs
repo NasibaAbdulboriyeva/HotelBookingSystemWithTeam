@@ -19,8 +19,7 @@ public class UserRoleRepository : IUserRoleRepository
     }
     public async Task<long> InsertUserRoleAsync(UserRole userRole)
     {
-        _context.UserRoles.Add(userRole);
-        await _context.SaveChangesAsync();
+        await _context.UserRoles.AddAsync(userRole);
         return userRole.RoleId;
     }
     public async Task RemoveUserRoleAsync(long userId, long roleId)
@@ -31,12 +30,15 @@ public class UserRoleRepository : IUserRoleRepository
         if (userRole != null)
         {
             _context.UserRoles.Remove(userRole);
-            await _context.SaveChangesAsync();
         }
     }
     public async Task<ICollection<UserRole>> SelectAllAsync()
     {
         return await _context.UserRoles.ToListAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }
 

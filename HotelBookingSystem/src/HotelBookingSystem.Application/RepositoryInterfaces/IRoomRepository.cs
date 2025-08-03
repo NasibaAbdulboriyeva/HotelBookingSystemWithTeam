@@ -11,5 +11,6 @@ public interface IRoomRepository
     Task<long> InsertAsync(Room room);
     Task UpdateAvailabilityAsync(long roomId, bool isAvailable);
     Task UpdateAsync(Room room);
+    Task<int> SaveChangesAsync();
 }
 

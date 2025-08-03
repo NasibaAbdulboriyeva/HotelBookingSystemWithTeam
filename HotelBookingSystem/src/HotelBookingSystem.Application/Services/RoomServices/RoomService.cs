@@ -1,86 +1,86 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using HotelBookingSystem.Application.Dtos.RoomDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
+using HotelBookingSystem.Application.Services.RoomServices;
 using HotelBookingSystem.Domain.Entities;
 
-namespace HotelBookingSystem.Application.Services.RoomServices
+public class RoomService : IRoomService
 {
-    public class RoomService : IRoomService
+    private readonly IRoomRepository _roomRepository;
+    private readonly IMapper _mapper;
+    private readonly IValidator<CreateRoomDto> _createRoomDtoValidator;
+
+    public RoomService(IRoomRepository roomRepository, IMapper mapper, IValidator<CreateRoomDto> createRoomDtoValidator)
     {
-        private readonly IRoomRepository _roomRepository;
-        private readonly IMapper _mapper;
+        _roomRepository = roomRepository;
+        _mapper = mapper;
+        _createRoomDtoValidator = createRoomDtoValidator;
+    }
 
-        public RoomService(IRoomRepository roomRepository, IMapper mapper)
-        {
-            _roomRepository = roomRepository;
-            _mapper = mapper;
-        }
+    public async Task<long> CreateRoomAsync(CreateRoomDto newRoom)
+    {
+        ArgumentNullException.ThrowIfNull(newRoom);
 
-        public async Task<long> CreateRoomAsync(CreateRoomDto newRoom)
-        {
-            ArgumentNullException.ThrowIfNull(newRoom);
+        var validationResult = await _createRoomDtoValidator.ValidateAsync(newRoom);
+        if (!validationResult.IsValid)
+            throw new ValidationException(validationResult.Errors);
 
-            var roomEntity = _mapper.Map<Room>(newRoom);
-            return await _roomRepository.InsertAsync(roomEntity);
-        }
+        var roomEntity = _mapper.Map<Room>(newRoom);
 
-        public async Task DeleteRoomAsync(long roomId)
-        {
-            var existingRoom = await _roomRepository.SelectByIdAsync(roomId);
-            if (existingRoom == null)
-            {
-                throw new InvalidOperationException("Room not found.");
-            }
+        await _roomRepository.InsertAsync(roomEntity);
+        await _roomRepository.SaveChangesAsync(); // <-- qo‘shildi
 
-            existingRoom.IsDeleted = true;
-            existingRoom.IsAvailable = false;
-            await _roomRepository.UpdateAsync(existingRoom);
-        }
+        return roomEntity.RoomId;
+    }
 
-        public async Task<IEnumerable<RoomDto>> GetAllRoomsAsync()
-        {
-            var rooms = await _roomRepository.SelectAllAsync();
-            var filtered = rooms.Where(r => !r.IsDeleted);
-            return filtered.Select(room => _mapper.Map<RoomDto>(room)).ToList();
-        }
+    public async Task DeleteRoomAsync(long roomId)
+    {
+        var existingRoom = await _roomRepository.SelectByIdAsync(roomId);
+        if (existingRoom == null)
+            throw new InvalidOperationException("Room not found.");
 
-        public async Task<IEnumerable<RoomDto>> GetAvailableRoomsAsync()
-        {
-            var rooms = await _roomRepository.SelectAllAsync();
-            var filtered = rooms.Where(r => r.IsAvailable && !r.IsDeleted);
-            return filtered.Select(room => _mapper.Map<RoomDto>(room)).ToList();
-        }
+        existingRoom.IsDeleted = true;
+        existingRoom.IsAvailable = false;
 
-        public async Task<RoomDto> GetRoomByIdAsync(long roomId)
-        {
-            var room = await _roomRepository.SelectByIdAsync(roomId);
-            if (room == null || room.IsDeleted)
-            {
-                throw new InvalidOperationException("Room not found.");
-            }
+        await _roomRepository.UpdateAsync(existingRoom);
+        await _roomRepository.SaveChangesAsync(); // <-- qo‘shildi
+    }
 
-            return _mapper.Map<RoomDto>(room);
-        }
+    public async Task<IEnumerable<RoomDto>> GetAllRoomsAsync()
+    {
+        var rooms = await _roomRepository.SelectAllAsync();
+        var filtered = rooms.Where(r => !r.IsDeleted);
+        return filtered.Select(room => _mapper.Map<RoomDto>(room)).ToList();
+    }
 
+    public async Task<IEnumerable<RoomDto>> GetAvailableRoomsAsync()
+    {
+        var rooms = await _roomRepository.SelectAllAsync();
+        var filtered = rooms.Where(r => r.IsAvailable && !r.IsDeleted);
+        return filtered.Select(room => _mapper.Map<RoomDto>(room)).ToList();
+    }
 
+    public async Task<RoomDto> GetRoomByIdAsync(long roomId)
+    {
+        var room = await _roomRepository.SelectByIdAsync(roomId);
+        if (room == null || room.IsDeleted)
+            throw new InvalidOperationException("Room not found.");
 
-        public async Task UpdateRoomAsync(RoomDto roomDto)
-        {
-            if (roomDto == null)
-            {
-                throw new ArgumentNullException(nameof(roomDto));
-            }
+        return _mapper.Map<RoomDto>(room);
+    }
 
-            var existingRoom = await _roomRepository.SelectByIdAsync(roomDto.RoomId);
-            if (existingRoom == null || existingRoom.IsDeleted)
-            {
-                throw new InvalidOperationException("Room not found.");
-            }
+    public async Task UpdateRoomAsync(RoomUpdateDto roomDto)
+    {
+        ArgumentNullException.ThrowIfNull(roomDto);
 
-            _mapper.Map(roomDto, existingRoom);
+        var existingRoom = await _roomRepository.SelectByIdAsync(roomDto.RoomId);
+        if (existingRoom == null || existingRoom.IsDeleted)
+            throw new InvalidOperationException("Room not found.");
 
-            await _roomRepository.UpdateAsync(existingRoom);
-        }
+        _mapper.Map(roomDto, existingRoom);
 
+        await _roomRepository.UpdateAsync(existingRoom);
+        await _roomRepository.SaveChangesAsync(); // <-- qo‘shildi
     }
 }

@@ -9,5 +9,6 @@ public interface IServiceRepository
     Task<long> InsertAsync(Service service);
     Task UpdateAsync(Service service);
     Task RemoveAsync(long serviceId);
+    Task<int> SaveChangesAsync();
 }
 

@@ -9,7 +9,7 @@ namespace HotelBookingSystem.Application.Services.RoleServices
         Task<RoleDto> GetRoleByIdAsync(long roleId);
         Task<RoleDto> GetRoleByNameAsync(string roleName);
         Task<ICollection<RoleDto>> GetAllRolesAsync();
-        Task UpdateRoleAsync(RoleDto role);
+        Task UpdateRoleAsync(RoleUpdateDto role);
         Task DeleteRoleAsync(long roleId);
     }
 }

@@ -20,7 +20,6 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             if (card != null)
             {
                 card.SelectedForPayment = false;
-                await _appDbContext.SaveChangesAsync();
             }
         }
 
@@ -30,7 +29,6 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             if (card != null)
             {
                 card.SelectedForPayment = true;
-                await _appDbContext.SaveChangesAsync();
             }
         }
 
@@ -39,14 +37,12 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
             var card = await _appDbContext.Cards.FirstOrDefaultAsync(c => c.CardId == id);
           
                 _appDbContext.Cards.Remove(card);
-                await _appDbContext.SaveChangesAsync();
             
         }
 
         public async Task<long> InsertAsync(Card card)
         {
             await _appDbContext.Cards.AddAsync(card);
-            await _appDbContext.SaveChangesAsync();
             return card.CardId;
         }
 
@@ -89,7 +85,10 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
                 card.SelectedForPayment = false;
             }
 
-            await _appDbContext.SaveChangesAsync();
+        }
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _appDbContext.SaveChangesAsync();
         }
     }
 }

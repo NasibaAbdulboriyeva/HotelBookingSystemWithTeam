@@ -15,6 +15,7 @@ namespace HotelBookingSystem.Application.Mappings
         public ComplaintMapper()
         {
             CreateMap<Complaint, ComplaintDto>().ReverseMap();
+            CreateMap<Complaint, ComplaintUpdateDto>().ReverseMap();
             CreateMap<Complaint, CreateComplaintDto>().ReverseMap();
         }
     

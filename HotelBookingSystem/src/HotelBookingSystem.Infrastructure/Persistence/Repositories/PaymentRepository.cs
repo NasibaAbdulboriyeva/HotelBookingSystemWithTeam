@@ -15,8 +15,7 @@ public class PaymentRepository : IPaymentRepository
 
     public async Task<long> InsertAsync(Payment payment)
     {
-        _context.Payments.Add(payment);
-        await _context.SaveChangesAsync();
+        await _context.Payments.AddAsync(payment);
         return payment.PaymentId;
     }
 
@@ -24,7 +23,6 @@ public class PaymentRepository : IPaymentRepository
     {
         var payment = await SelectByIdAsync(paymentId);
         _context.Payments.Remove(payment);
-        await _context.SaveChangesAsync();
     }
 
     public async Task<ICollection<Payment>> SelectByBookingIdAsync(long bookingId)
@@ -62,10 +60,13 @@ public class PaymentRepository : IPaymentRepository
     public async Task UpdateAsync(Payment payment)
     {
         _context.Payments.Update(payment);
-        await _context.SaveChangesAsync();
     }
     public async Task<ICollection<Payment>> SelectAllAsync()
     {
         return await _context.Payments.ToListAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

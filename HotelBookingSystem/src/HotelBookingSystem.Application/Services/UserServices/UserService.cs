@@ -4,96 +4,92 @@ using HotelBookingSystem.Application.Dtos.UserDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Domain.Entities;
 
+namespace HotelBookingSystem.Application.Services.UserServices;
 
-namespace HotelBookingSystem.Application.Services.UserServices
+public class UserService : IUserService
 {
-    public class UserService : IUserService
+    private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
+    private readonly IValidator<CreateUserDto> _createUserValidator;
+
+    public UserService(
+        IUserRepository userRepository,
+        IMapper mapper,
+        IValidator<CreateUserDto> createUserValidator)
     {
+        _userRepository = userRepository;
+        _mapper = mapper;
+        _createUserValidator = createUserValidator;
+    }
 
-        private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
-        private readonly IValidator<CreateUserDto> _createUserValidator;
+    public async Task<long> CreateUserAsync(CreateUserDto createUserDto)
+    {
+        ArgumentNullException.ThrowIfNull(createUserDto);
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IValidator<CreateUserDto> createUserValidator)
-        {
-            _userRepository = userRepository;
-            _mapper = mapper;
-            _createUserValidator = createUserValidator;
-        }
+        var validationResult = await _createUserValidator.ValidateAsync(createUserDto);
+        if (!validationResult.IsValid)
+            throw new ValidationException(validationResult.Errors);
 
-        public async Task<long> CreateUserAsync(CreateUserDto createUserDto)
-        {
-            ArgumentNullException.ThrowIfNull(createUserDto);
+        var exists = await _userRepository.SelectByEmailAsync(createUserDto.Email);
+        if (exists is not null)
+            throw new InvalidOperationException("User with this email already exists.");
 
-            var validationResult = await _createUserValidator.ValidateAsync(createUserDto);
-            if (!validationResult.IsValid)
-            {
-                var errors = string.Join("; ", validationResult.Errors.Select(e => e.ErrorMessage));
-                throw new ValidationException($"Validation failed: {errors}");
-            }
+        var userEntity = _mapper.Map<User>(createUserDto);
 
-            var existingUser = await _userRepository.SelectByEmailAsync(createUserDto.Email);
-            if (existingUser != null)
-            {
-                throw new InvalidOperationException("A user with this email already exists.");
-            }
+        await _userRepository.InsertAsync(userEntity);
+        await _userRepository.SaveChangesAsync();
 
-            var userEntity = _mapper.Map<User>(createUserDto);
-            return await _userRepository.InsertAsync(userEntity);
-        }
+        return userEntity.UserId;
+    }
 
-        public async Task DeleteUserAsync(long userId)
-        {
-            var user = await _userRepository.SelectByIdAsync(userId);
-            if (user == null)
-            {
-                throw new KeyNotFoundException("User not found.");
-            }
-            await _userRepository.RemoveAsync(userId);
-        }
+    public async Task UpdateUserAsync(UserUpdateDto userDto)
+    {
+        ArgumentNullException.ThrowIfNull(userDto);
 
-        public async Task<ICollection<UserDto>> GetAllUsersAsync(int skip, int take)
-        {
-            if (skip < 0)
-            {
-                throw new ArgumentOutOfRangeException("Skip value cannot be negative.");
+        var validationResult = await _createUserValidator.ValidateAsync(
+            _mapper.Map<CreateUserDto>(userDto));
 
-            }
-            if (take <= 0 || take > 100)
-            {
-                throw new ArgumentOutOfRangeException("Take must be between 1 and 100.");
-            }
-            var users = await _userRepository.SelectAllUsersAsync(skip, take);
-            return users.Select(u => _mapper.Map<UserDto>(u)).ToList();
-        }
+        if (!validationResult.IsValid)
+            throw new ValidationException(validationResult.Errors);
 
-        public async Task<UserDto> GetUserByIdAsync(long userId)
-        {
-            var user = await _userRepository.SelectByIdAsync(userId);
-            if (user == null)
-            {
-                throw new KeyNotFoundException("User not found.");
-            }
-            return _mapper.Map<UserDto>(user);
-        }
+        var user = await _userRepository.SelectByIdAsync(userDto.UserId);
+        if (user is null)
+            throw new KeyNotFoundException("User not found.");
 
-        public async Task UpdateUserAsync(UserDto userDto)
-        {
-            ArgumentNullException.ThrowIfNull(userDto);
+        _mapper.Map(userDto, user);
 
-            var validationResult = await _createUserValidator.ValidateAsync(_mapper.Map<CreateUserDto>(userDto));
-            if (!validationResult.IsValid)
-            {
-                throw new ValidationException($"Validation failed");
-            }
+        await _userRepository.UpdateAsync(user);
+        await _userRepository.SaveChangesAsync();
+    }
 
-            var existingUser = await _userRepository.SelectByIdAsync(userDto.UserId);
-            if (existingUser == null)
-            {
-                throw new KeyNotFoundException("User not found.");
-            }
-            _mapper.Map(userDto, existingUser);
-            await _userRepository.UpdateAsync(existingUser);
-        }
+    public async Task DeleteUserAsync(long userId)
+    {
+        var user = await _userRepository.SelectByIdAsync(userId);
+        if (user is null)
+            throw new KeyNotFoundException("User not found.");
+
+        await _userRepository.RemoveAsync(userId);
+        await _userRepository.SaveChangesAsync();
+    }
+
+    public async Task<UserDto> GetUserByIdAsync(long userId)
+    {
+        var user = await _userRepository.SelectByIdAsync(userId);
+        if (user is null)
+            throw new KeyNotFoundException("User not found.");
+
+        return _mapper.Map<UserDto>(user);
+    }
+
+    public async Task<ICollection<UserDto>> GetAllUsersAsync(int skip, int take)
+    {
+        if (skip < 0)
+            throw new ArgumentOutOfRangeException(nameof(skip), "Skip must be non-negative.");
+
+        if (take is <= 0 or > 100)
+            throw new ArgumentOutOfRangeException(nameof(take), "Take must be between 1 and 100.");
+
+        var users = await _userRepository.SelectAllUsersAsync(skip, take);
+        return users.Select(_mapper.Map<UserDto>).ToList();
     }
 }
