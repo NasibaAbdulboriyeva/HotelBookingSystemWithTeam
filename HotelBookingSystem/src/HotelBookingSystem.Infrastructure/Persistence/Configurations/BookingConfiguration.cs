@@ -22,7 +22,7 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         builder.HasOne(b => b.Payment)
             .WithOne(p => p.Booking)
             .HasForeignKey<Payment>(p => p.BookingId);
-    
+
 
         builder.HasOne(b => b.User)
             .WithMany(u => u.Bookings)
@@ -32,5 +32,9 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         builder.HasMany(r => r.BookingRooms)
            .WithOne(br => br.Booking)
            .HasForeignKey(br => br.BookingId);
+        builder.HasMany(b => b.Complaints)
+            .WithOne(c => c.Booking)
+            .HasForeignKey(c => c.BookingId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

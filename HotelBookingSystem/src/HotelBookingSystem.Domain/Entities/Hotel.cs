@@ -9,6 +9,8 @@ public class Hotel
     public string Description { get; set; }
     public int TotalRooms { get; set; }
     public int StarRating { get; set; }
+    public City City { get; set; }
+    public long  CityId { get; set; }
     public List<Room> Rooms { get; set; } = new List<Room>();
     public List<Role> Roles { get; set; } = new List<Role>();
     public List<Service> Services { get; set; } = new List<Service>();

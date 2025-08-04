@@ -1,19 +1,21 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using HotelBookingSystem.Application.Dtos.ServiceDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
+using HotelBookingSystem.Application.Services.AffairService;
 using HotelBookingSystem.Domain.Entities;
-
-namespace HotelBookingSystem.Application.Services.AffairService;
 
 public class AffairService : IAffairService
 {
     private readonly IServiceRepository _serviceRepository;
     private readonly IMapper _mapper;
+    private readonly IValidator<CreateServiceDto> _createServiceDtoValidator;
 
-    public AffairService(IServiceRepository serviceRepository, IMapper mapper)
+    public AffairService(IServiceRepository serviceRepository, IMapper mapper, IValidator<CreateServiceDto> createServiceDtoValidator)
     {
         _serviceRepository = serviceRepository;
         _mapper = mapper;
+        _createServiceDtoValidator = createServiceDtoValidator;
     }
 
     public async Task<ServiceDto> GetByIdAsync(long id)
@@ -37,15 +39,21 @@ public class AffairService : IAffairService
         return services.Select(_mapper.Map<ServiceDto>).ToList();
     }
 
-    public async Task<long> CreateAsync(CreateServiceDto craeteServiceDto)
+    public async Task<long> CreateAsync(CreateServiceDto createServiceDto)
     {
-        ArgumentNullException.ThrowIfNull(craeteServiceDto);
+        ArgumentNullException.ThrowIfNull(createServiceDto);
 
-        var service = _mapper.Map<Service>(craeteServiceDto);
-        return await _serviceRepository.InsertAsync(service);
+        var result = await _createServiceDtoValidator.ValidateAsync(createServiceDto);
+        if (!result.IsValid)
+            throw new ValidationException(result.Errors);
+
+        var service = _mapper.Map<Service>(createServiceDto);
+        await _serviceRepository.InsertAsync(service);
+        await _serviceRepository.SaveChangesAsync(); // qo‘shildi
+        return service.ServiceId;
     }
 
-    public async Task UpdateAsync(ServiceDto updateServiceDto)
+    public async Task UpdateAsync(ServiceUpdateDto updateServiceDto)
     {
         ArgumentNullException.ThrowIfNull(updateServiceDto);
 
@@ -54,8 +62,8 @@ public class AffairService : IAffairService
             throw new InvalidOperationException("Service not found.");
 
         _mapper.Map(updateServiceDto, existing);
-
         await _serviceRepository.UpdateAsync(existing);
+        await _serviceRepository.SaveChangesAsync(); // qo‘shildi
     }
 
     public async Task DeleteAsync(long id)
@@ -65,5 +73,6 @@ public class AffairService : IAffairService
             throw new InvalidOperationException("Service not found.");
 
         await _serviceRepository.RemoveAsync(id);
+        await _serviceRepository.SaveChangesAsync(); // qo‘shildi
     }
 }

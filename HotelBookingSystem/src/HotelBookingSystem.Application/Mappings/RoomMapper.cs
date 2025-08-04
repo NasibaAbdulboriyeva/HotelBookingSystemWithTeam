@@ -14,5 +14,6 @@ public class RoomMapper : Profile
     {
         CreateMap<CreateRoomDto, Room>().ReverseMap();
         CreateMap<RoomDto, Room>().ReverseMap();
+        CreateMap<RoomUpdateDto, Room>().ReverseMap();
     }
 }

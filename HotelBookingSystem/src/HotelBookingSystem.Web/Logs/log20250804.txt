@@ -1,0 +1,191 @@
+2025-08-04 09:02:40.680 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-04 09:02:40.831 +05:00 [DBG] Hosting starting
+2025-08-04 09:02:40.845 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-04 09:02:40.856 +05:00 [DBG] Reading data from file 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys\key-8b84c055-e5bb-4b6a-863a-ce67bcd16812.xml'.
+2025-08-04 09:02:40.866 +05:00 [DBG] Found key {8b84c055-e5bb-4b6a-863a-ce67bcd16812}.
+2025-08-04 09:02:40.878 +05:00 [DBG] Considering key {8b84c055-e5bb-4b6a-863a-ce67bcd16812} with expiration date 2025-09-18 02:51:18Z as default key.
+2025-08-04 09:02:40.882 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-04 09:02:40.887 +05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-08-04 09:02:40.889 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-04 09:02:40.894 +05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-08-04 09:02:40.895 +05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-08-04 09:02:40.896 +05:00 [DBG] Using key {8b84c055-e5bb-4b6a-863a-ce67bcd16812} as the default key.
+2025-08-04 09:02:40.897 +05:00 [DBG] Key ring with default key {8b84c055-e5bb-4b6a-863a-ce67bcd16812} was loaded during application startup.
+2025-08-04 09:02:41.018 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-04 09:02:41.018 +05:00 [DBG] Loaded hosting startup assembly HotelBookingSystem.Web
+2025-08-04 09:02:41.019 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-08-04 09:02:41.019 +05:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-08-04 09:02:41.019 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-08-04 09:02:41.053 +05:00 [DBG] Connection id "0HNEJ1F113JTU" accepted.
+2025-08-04 09:02:41.054 +05:00 [DBG] Connection id "0HNEJ1F113JTU" started.
+2025-08-04 09:02:41.055 +05:00 [DBG] Connection id "0HNEJ1F113JTV" accepted.
+2025-08-04 09:02:41.056 +05:00 [DBG] Connection id "0HNEJ1F113JTV" started.
+2025-08-04 09:02:41.077 +05:00 [DBG] Connection id "0HNEJ1F113JTU" received FIN.
+2025-08-04 09:02:41.077 +05:00 [DBG] Connection id "0HNEJ1F113JTV" received FIN.
+2025-08-04 09:02:41.080 +05:00 [DBG] Connection id "0HNEJ1F113JTV" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:02:41.080 +05:00 [DBG] Connection id "0HNEJ1F113JTU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:02:41.084 +05:00 [DBG] Connection id "0HNEJ1F113JTU" disconnecting.
+2025-08-04 09:02:41.084 +05:00 [DBG] Connection id "0HNEJ1F113JTV" disconnecting.
+2025-08-04 09:02:41.090 +05:00 [DBG] Connection id "0HNEJ1F113JTU" stopped.
+2025-08-04 09:02:41.090 +05:00 [DBG] Connection id "0HNEJ1F113JTV" stopped.
+2025-08-04 09:02:41.180 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-04 09:02:41.180 +05:00 [INF] Hosting environment: Development
+2025-08-04 09:02:41.181 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-04 09:02:41.181 +05:00 [DBG] Hosting started
+2025-08-04 09:02:41.539 +05:00 [DBG] Connection id "0HNEJ1F113JU0" accepted.
+2025-08-04 09:02:41.540 +05:00 [DBG] Connection id "0HNEJ1F113JU0" started.
+2025-08-04 09:02:42.001 +05:00 [DBG] Connection id "0HNEJ1F113JU1" accepted.
+2025-08-04 09:02:42.004 +05:00 [DBG] Connection id "0HNEJ1F113JU1" started.
+2025-08-04 09:02:42.057 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-04 09:02:42.228 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-08-04 09:02:42.256 +05:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-08-04 09:02:42.257 +05:00 [DBG] Request did not match any endpoints
+2025-08-04 09:02:42.296 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-04 09:02:42.415 +05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-08-04 09:02:42.417 +05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-08-04 09:02:42.451 +05:00 [INF] Request to /swagger/index.html took 0.138 seconds with status code 200
+2025-08-04 09:02:42.453 +05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-08-04 09:02:42.455 +05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-08-04 09:02:42.455 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-04 09:02:42.455 +05:00 [DBG] Connection id "0HNEJ1F113JU0" completed keep alive response.
+2025-08-04 09:02:42.459 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 405.6287ms
+2025-08-04 09:02:42.460 +05:00 [DBG] Connection id "0HNEJ1F113JU1" completed keep alive response.
+2025-08-04 09:02:42.460 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 5.5988ms
+2025-08-04 09:02:42.476 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-04 09:02:42.528 +05:00 [DBG] Connection id "0HNEJ1F113JU1" completed keep alive response.
+2025-08-04 09:02:42.529 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.135ms
+2025-08-04 09:02:42.657 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-04 09:02:42.660 +05:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-08-04 09:02:42.660 +05:00 [DBG] Request did not match any endpoints
+2025-08-04 09:02:42.662 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-04 09:02:42.784 +05:00 [DBG] Connection id "0HNEJ1F113JU1" completed keep alive response.
+2025-08-04 09:02:42.784 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 500 null application/json 127.3546ms
+2025-08-04 09:02:44.827 +05:00 [DBG] Connection id "0HNEJ1F113JU0" received FIN.
+2025-08-04 09:02:44.827 +05:00 [DBG] Connection id "0HNEJ1F113JU1" received FIN.
+2025-08-04 09:02:44.827 +05:00 [DBG] Connection id "0HNEJ1F113JU0" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:02:44.828 +05:00 [DBG] Connection id "0HNEJ1F113JU1" disconnecting.
+2025-08-04 09:02:44.828 +05:00 [DBG] Connection id "0HNEJ1F113JU1" stopped.
+2025-08-04 09:02:44.828 +05:00 [DBG] Connection id "0HNEJ1F113JU0" disconnecting.
+2025-08-04 09:02:44.828 +05:00 [DBG] Connection id "0HNEJ1F113JU0" stopped.
+2025-08-04 09:02:44.828 +05:00 [DBG] Connection id "0HNEJ1F113JU1" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:03:14.036 +05:00 [DBG] Connection id "0HNEJ1F113JU2" accepted.
+2025-08-04 09:03:14.037 +05:00 [DBG] Connection id "0HNEJ1F113JU2" received FIN.
+2025-08-04 09:03:14.037 +05:00 [DBG] Connection id "0HNEJ1F113JU2" started.
+2025-08-04 09:03:14.037 +05:00 [DBG] Connection id "0HNEJ1F113JU2" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:03:14.037 +05:00 [DBG] Connection id "0HNEJ1F113JU2" disconnecting.
+2025-08-04 09:03:14.037 +05:00 [DBG] Connection id "0HNEJ1F113JU2" stopped.
+2025-08-04 09:03:14.109 +05:00 [DBG] Connection id "0HNEJ1F113JU3" accepted.
+2025-08-04 09:03:14.109 +05:00 [DBG] Connection id "0HNEJ1F113JU3" started.
+2025-08-04 09:03:14.304 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-04 09:03:14.310 +05:00 [DBG] Connection id "0HNEJ1F113JU4" accepted.
+2025-08-04 09:03:14.310 +05:00 [DBG] Connection id "0HNEJ1F113JU4" started.
+2025-08-04 09:03:14.396 +05:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-08-04 09:03:14.396 +05:00 [DBG] Request did not match any endpoints
+2025-08-04 09:03:14.401 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-04 09:03:14.404 +05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-08-04 09:03:14.404 +05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-08-04 09:03:14.405 +05:00 [INF] Request to /swagger/index.html took 0.002 seconds with status code 200
+2025-08-04 09:03:14.406 +05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-08-04 09:03:14.406 +05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-08-04 09:03:14.406 +05:00 [DBG] Connection id "0HNEJ1F113JU3" completed keep alive response.
+2025-08-04 09:03:14.406 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 102.0716ms
+2025-08-04 09:03:14.484 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-04 09:03:14.489 +05:00 [DBG] Connection id "0HNEJ1F113JU3" completed keep alive response.
+2025-08-04 09:03:14.490 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 5.6231ms
+2025-08-04 09:03:14.495 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-04 09:03:14.522 +05:00 [DBG] Connection id "0HNEJ1F113JU3" completed keep alive response.
+2025-08-04 09:03:14.523 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.7206ms
+2025-08-04 09:03:14.727 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-04 09:03:14.727 +05:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-08-04 09:03:14.727 +05:00 [DBG] Request did not match any endpoints
+2025-08-04 09:03:14.727 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-04 09:03:14.745 +05:00 [DBG] Connection id "0HNEJ1F113JU3" completed keep alive response.
+2025-08-04 09:03:14.745 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 500 null application/json 18.2665ms
+2025-08-04 09:03:19.863 +05:00 [DBG] Connection id "0HNEJ1F113JU3" received FIN.
+2025-08-04 09:03:19.863 +05:00 [DBG] Connection id "0HNEJ1F113JU3" disconnecting.
+2025-08-04 09:03:19.863 +05:00 [DBG] Connection id "0HNEJ1F113JU3" stopped.
+2025-08-04 09:03:19.863 +05:00 [DBG] Connection id "0HNEJ1F113JU4" received FIN.
+2025-08-04 09:03:19.863 +05:00 [DBG] Connection id "0HNEJ1F113JU4" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:03:19.864 +05:00 [DBG] Connection id "0HNEJ1F113JU4" disconnecting.
+2025-08-04 09:03:19.864 +05:00 [DBG] Connection id "0HNEJ1F113JU4" stopped.
+2025-08-04 09:03:19.864 +05:00 [DBG] Connection id "0HNEJ1F113JU3" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:06:59.662 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-04 09:07:00.582 +05:00 [DBG] Hosting starting
+2025-08-04 09:07:00.596 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-04 09:07:00.610 +05:00 [DBG] Reading data from file 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys\key-8b84c055-e5bb-4b6a-863a-ce67bcd16812.xml'.
+2025-08-04 09:07:00.627 +05:00 [DBG] Found key {8b84c055-e5bb-4b6a-863a-ce67bcd16812}.
+2025-08-04 09:07:00.638 +05:00 [DBG] Considering key {8b84c055-e5bb-4b6a-863a-ce67bcd16812} with expiration date 2025-09-18 02:51:18Z as default key.
+2025-08-04 09:07:00.641 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-04 09:07:00.649 +05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-08-04 09:07:00.656 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-04 09:07:00.662 +05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-08-04 09:07:00.663 +05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-08-04 09:07:00.665 +05:00 [DBG] Using key {8b84c055-e5bb-4b6a-863a-ce67bcd16812} as the default key.
+2025-08-04 09:07:00.666 +05:00 [DBG] Key ring with default key {8b84c055-e5bb-4b6a-863a-ce67bcd16812} was loaded during application startup.
+2025-08-04 09:07:00.918 +05:00 [DBG] Connection id "0HNEJ1HEFC7M0" received FIN.
+2025-08-04 09:07:00.928 +05:00 [DBG] Connection id "0HNEJ1HEFC7M0" accepted.
+2025-08-04 09:07:00.930 +05:00 [DBG] Connection id "0HNEJ1HEFC7M0" started.
+2025-08-04 09:07:00.930 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-04 09:07:00.930 +05:00 [DBG] Loaded hosting startup assembly HotelBookingSystem.Web
+2025-08-04 09:07:00.931 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-08-04 09:07:00.931 +05:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-08-04 09:07:00.931 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-08-04 09:07:00.935 +05:00 [DBG] Connection id "0HNEJ1HEFC7M0" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:07:00.939 +05:00 [DBG] Connection id "0HNEJ1HEFC7M0" disconnecting.
+2025-08-04 09:07:00.946 +05:00 [DBG] Connection id "0HNEJ1HEFC7M0" stopped.
+2025-08-04 09:07:01.108 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-04 09:07:01.108 +05:00 [INF] Hosting environment: Development
+2025-08-04 09:07:01.108 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-04 09:07:01.108 +05:00 [DBG] Hosting started
+2025-08-04 09:07:07.126 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" accepted.
+2025-08-04 09:07:07.129 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" started.
+2025-08-04 09:07:07.291 +05:00 [DBG] Connection id "0HNEJ1HEFC7M2" accepted.
+2025-08-04 09:07:07.293 +05:00 [DBG] Connection id "0HNEJ1HEFC7M2" started.
+2025-08-04 09:07:07.384 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-04 09:07:08.143 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-08-04 09:07:08.203 +05:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-08-04 09:07:08.205 +05:00 [DBG] Request did not match any endpoints
+2025-08-04 09:07:08.636 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-04 09:07:08.873 +05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-08-04 09:07:08.876 +05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-08-04 09:07:08.921 +05:00 [INF] Request to /swagger/index.html took 0.27 seconds with status code 200
+2025-08-04 09:07:08.926 +05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-08-04 09:07:08.928 +05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-08-04 09:07:08.930 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" completed keep alive response.
+2025-08-04 09:07:08.938 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 1576.1414ms
+2025-08-04 09:07:09.035 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-04 09:07:09.061 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-04 09:07:09.209 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" completed keep alive response.
+2025-08-04 09:07:09.209 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 148.0989ms
+2025-08-04 09:07:10.148 +05:00 [DBG] Connection id "0HNEJ1HEFC7M2" completed keep alive response.
+2025-08-04 09:07:10.150 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1115.3835ms
+2025-08-04 09:07:10.245 +05:00 [DBG] Connection id "0HNEJ1HEFC7M2" received FIN.
+2025-08-04 09:07:10.246 +05:00 [DBG] Connection id "0HNEJ1HEFC7M2" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:07:10.246 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" received FIN.
+2025-08-04 09:07:10.250 +05:00 [DBG] Connection id "0HNEJ1HEFC7M2" disconnecting.
+2025-08-04 09:07:10.250 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-04 09:07:10.264 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" disconnecting.
+2025-08-04 09:07:10.269 +05:00 [DBG] Connection id "0HNEJ1HEFC7M1" stopped.
+2025-08-04 09:07:10.270 +05:00 [DBG] Connection id "0HNEJ1HEFC7M2" stopped.
+2025-08-04 09:07:10.289 +05:00 [DBG] Connection id "0HNEJ1HEFC7M3" accepted.
+2025-08-04 09:07:10.289 +05:00 [DBG] Connection id "0HNEJ1HEFC7M3" started.
+2025-08-04 09:07:10.290 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-04 09:07:10.293 +05:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-08-04 09:07:10.293 +05:00 [DBG] Request did not match any endpoints
+2025-08-04 09:07:10.296 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-04 09:07:10.816 +05:00 [DBG] Connection id "0HNEJ1HEFC7M3" completed keep alive response.
+2025-08-04 09:07:10.817 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 500 null application/json 526.6285ms
+2025-08-04 09:12:37.101 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-04 09:12:37.498 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-04 09:12:37.743 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-04 09:12:37.744 +05:00 [INF] Hosting environment: Development
+2025-08-04 09:12:37.744 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-04 09:12:38.521 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-04 09:12:39.134 +05:00 [INF] Request to /swagger/index.html took 0.146 seconds with status code 200
+2025-08-04 09:12:39.141 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 634.324ms
+2025-08-04 09:12:39.146 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-04 09:12:39.149 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-04 09:12:39.152 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 7.7617ms
+2025-08-04 09:12:39.253 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 104.1228ms
+2025-08-04 09:12:39.394 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-04 09:12:39.923 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 500 null application/json 528.4646ms

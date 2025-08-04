@@ -12,4 +12,5 @@ public interface ICardRepository
     Task AssignCardsAsNotSelectedAsync(ICollection<Card> cards);
     Task<ICollection<Card>> SelectCardsByUserIdAsync(long userId);
     Task DeleteAsync(long id);
+    Task<int> SaveChangesAsync();
 }

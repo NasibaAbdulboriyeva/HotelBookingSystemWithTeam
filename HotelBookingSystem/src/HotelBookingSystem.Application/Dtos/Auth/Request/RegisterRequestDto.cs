@@ -1,6 +1,6 @@
 ﻿
 
-namespace HootelBooking.Application.Dtos.Auth.Request
+namespace HootelBookingSystem.Application.Dtos.Auth.Request
 {
     public class RegisterRequestDto
     { 

@@ -10,5 +10,6 @@ public class ReviewMapper : Profile
     {
         CreateMap<CreateReviewDto, Review>().ReverseMap();
         CreateMap<Review, ReviewDto>().ReverseMap();
+        CreateMap<Review, ReviewUpdateDto>().ReverseMap();
     }
 }

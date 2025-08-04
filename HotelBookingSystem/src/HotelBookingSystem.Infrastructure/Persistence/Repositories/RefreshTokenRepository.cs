@@ -17,7 +17,6 @@ public class RefreshTokenRepository : IRefreshTokenRepository
     public async Task InsertRefreshTokenAsync(RefreshToken refreshToken)
     {
         await AppDbContext.RefreshTokens.AddAsync(refreshToken);
-        await AppDbContext.SaveChangesAsync();
     }
     public async Task RemoveRefreshTokenAsync(string token)
     {
@@ -30,7 +29,6 @@ public class RefreshTokenRepository : IRefreshTokenRepository
         }
 
         AppDbContext.RefreshTokens.Remove(rToken);
-        await AppDbContext.SaveChangesAsync();
     }
     public async Task<RefreshToken> SelectRefreshTokenAsync(string refreshToken, long userId)
     {
@@ -60,6 +58,9 @@ public class RefreshTokenRepository : IRefreshTokenRepository
         existingToken.ExpirationDate = refreshToken.ExpirationDate;
 
         AppDbContext.RefreshTokens.Update(existingToken);
-        await AppDbContext.SaveChangesAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await AppDbContext.SaveChangesAsync();
     }
 }

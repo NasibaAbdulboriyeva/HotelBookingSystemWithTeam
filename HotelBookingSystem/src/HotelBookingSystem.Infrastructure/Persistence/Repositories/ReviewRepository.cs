@@ -13,8 +13,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         }
         public async Task<long> InsertAsync(Review review)
         {
-            appDbContext.Reviews.Add(review);
-            await appDbContext.SaveChangesAsync();
+            await appDbContext.Reviews.AddAsync(review);
 
             return review.ReviewId;
         }
@@ -49,7 +48,10 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         {
             var review = await SelectByIdAsync(reviewId);
             appDbContext.Reviews.Remove(review);
-            await appDbContext.SaveChangesAsync();
+        }
+        public async Task<int> SaveChangesAsync()
+        {
+            return await appDbContext.SaveChangesAsync();
         }
     }
 }

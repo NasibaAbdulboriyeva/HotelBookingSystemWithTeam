@@ -9,7 +9,7 @@ namespace HotelBookingSystem.Application.Services.HotelService
         Task<ICollection<HotelDto>> GetAllAsync();
         Task<long> AddAsync(CreateHotelDto createHotelDto);
         Task<ICollection<HotelDto>> GetByLocationAsync(string location);
-        Task UpdateAsync(HotelDto hotelDto);
+        Task UpdateAsync(HotelUpdateDto hotelDto);
         Task DeleteAsync(long id);
     }
 }

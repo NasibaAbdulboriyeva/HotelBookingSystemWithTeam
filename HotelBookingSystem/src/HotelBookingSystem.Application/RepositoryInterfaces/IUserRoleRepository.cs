@@ -7,5 +7,6 @@ public interface IUserRoleRepository
     Task<long> InsertUserRoleAsync(UserRole userRole);
     Task<ICollection<UserRole>> SelectAllAsync();
     Task RemoveUserRoleAsync(long userId, long roleId);
+    Task<int> SaveChangesAsync();
 }
 

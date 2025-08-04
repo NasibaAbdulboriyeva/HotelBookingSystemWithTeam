@@ -40,7 +40,7 @@ namespace HotelBookingSystem.Web.Controllers
         }
 
         [HttpPut("updateService")]
-        public async Task Update([FromBody] ServiceDto updateDto)
+        public async Task Update([FromBody] ServiceUpdateDto updateDto)
         {
             await _affairService.UpdateAsync(updateDto);
         }

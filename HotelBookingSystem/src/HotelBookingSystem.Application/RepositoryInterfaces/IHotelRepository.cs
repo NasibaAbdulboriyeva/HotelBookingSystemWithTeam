@@ -9,5 +9,6 @@ public interface IHotelRepository
     Task<ICollection<Hotel>> SelectByLocationAsync(string location);
     Task UpdateAsync(Hotel hotel);
     Task RemoveAsync(long id);
+    Task<int> SaveChangesAsync();
 }
 

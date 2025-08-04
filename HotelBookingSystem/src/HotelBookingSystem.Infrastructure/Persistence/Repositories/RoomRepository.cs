@@ -14,8 +14,7 @@ public class RoomRepository : IRoomRepository
     }  
     public async Task<long> InsertAsync(Room room)
     {
-        _context.Rooms.Add(room);
-        await _context.SaveChangesAsync();
+        await _context.Rooms.AddAsync(room);
         return room.RoomId;
     }
 
@@ -69,7 +68,6 @@ public class RoomRepository : IRoomRepository
         var room = await SelectByIdAsync(roomId);
         room.IsAvailable = isAvailable;
         _context.Rooms.Update(room);
-        await _context.SaveChangesAsync();
     }
     public async Task<ICollection<Room>> SelectAllAsync()
     {
@@ -89,9 +87,12 @@ public class RoomRepository : IRoomRepository
         existingRoom.Price = room.Price;
         existingRoom.IsAvailable = room.IsAvailable;
         existingRoom.HotelId = room.HotelId;
-        existingRoom.IsDeleted = room.IsDeleted; 
+        existingRoom.IsDeleted = room.IsDeleted;
 
         _context.Rooms.Update(existingRoom);
-        await _context.SaveChangesAsync();
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

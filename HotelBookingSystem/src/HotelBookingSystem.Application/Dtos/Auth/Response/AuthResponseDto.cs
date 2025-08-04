@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HootelBooking.Application.Dtos.Auth.Response
+namespace HootelBookingSystem.Application.Dtos.Auth.Response
 {
     public class AuthResponseDto
     {

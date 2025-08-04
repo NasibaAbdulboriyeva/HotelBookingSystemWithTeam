@@ -58,7 +58,7 @@ namespace HotelBookingSystem.Web.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task UpdateBookingAsync(BookingDto updateBookingDto)
+        public async Task UpdateBookingAsync(BookingUpdateDto updateBookingDto)
         {
             await bookingService.UpdateBookingAsync(updateBookingDto);
         }

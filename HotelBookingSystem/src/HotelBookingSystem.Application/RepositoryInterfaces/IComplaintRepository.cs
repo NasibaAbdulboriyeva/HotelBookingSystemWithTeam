@@ -12,4 +12,5 @@ public interface IComplaintRepository
     Task<ICollection<Complaint>> SelectByStatusAsync(ComplaintStatus status);
     Task UpdateAsync(Complaint complaint);
     Task RemoveAsync(long complaintId);
+    Task<int> SaveChangesAsync();
 }

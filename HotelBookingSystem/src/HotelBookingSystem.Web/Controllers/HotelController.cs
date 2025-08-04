@@ -50,7 +50,7 @@ namespace HotelBookingSystem.API.Controllers
 
         
         [HttpPut("updateHotel")]
-        public async Task Update(HotelDto updateDto)
+        public async Task Update(HotelUpdateDto updateDto)
         {
             await _hotelService.UpdateAsync(updateDto);
 

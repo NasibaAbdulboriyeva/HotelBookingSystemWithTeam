@@ -16,7 +16,6 @@ public class UserRepository : IUserRepository
     public async Task<long> InsertAsync(User user)
     {
         await _context.Users.AddAsync(user);
-        await _context.SaveChangesAsync();
         return user.UserId;
     }
 
@@ -57,7 +56,6 @@ public class UserRepository : IUserRepository
     public async Task UpdateAsync(User user)
     {
         _context.Users.Update(user);
-        await _context.SaveChangesAsync();
     }
     public async Task<ICollection<User>> SelectAllAsync()
     {
@@ -67,7 +65,10 @@ public class UserRepository : IUserRepository
     public async Task RemoveAsync(long userId)
     {
         var user = await SelectByIdAsync(userId);
-         _context.Users.Remove(user);
-        await _context.SaveChangesAsync();
+        _context.Users.Remove(user);
+    }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

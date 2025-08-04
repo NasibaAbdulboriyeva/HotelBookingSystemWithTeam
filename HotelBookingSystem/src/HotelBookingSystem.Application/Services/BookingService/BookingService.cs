@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using HotelBookingSystem.Application.Dtos.BookingDtos;
+using HotelBookingSystem.Application.Dtos.ServiceDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Domain.Entities;
 using HotelBookingSystem.Domain.Enums;
@@ -10,19 +12,27 @@ namespace HotelBookingSystem.Application.Services.BookingService
     {
         private readonly IBookingRepository bookingRepository;
         private readonly IMapper mapper;
-        public BookingService(IBookingRepository Booking, IMapper Map)
+        private readonly IValidator<CreateBookingDto> _createBookingDtoValidator;
+        public BookingService(IBookingRepository Booking, IMapper Map, IValidator<CreateBookingDto> createBookingDtoValidator)
         {
             bookingRepository = Booking;
             mapper = Map;
+           _createBookingDtoValidator = createBookingDtoValidator;
         }
         public async Task<long> CreateBookingAsync(CreateBookingDto createBookingDto)
         {
             ArgumentNullException.ThrowIfNull(createBookingDto);
+
+            var validationResult = await _createBookingDtoValidator.ValidateAsync(createBookingDto);
+            if (!validationResult.IsValid)
+                throw new ValidationException(validationResult.Errors);
+
             var bookingEntity = mapper.Map<Booking>(createBookingDto);
+            await bookingRepository.InsertAsync(bookingEntity);
+            await bookingRepository.SaveChangesAsync();
 
-            return await bookingRepository.InsertAsync(bookingEntity);
+            return bookingEntity.BookingId;
         }
-
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
             ArgumentNullException.ThrowIfNull(roomId);
@@ -65,12 +75,15 @@ namespace HotelBookingSystem.Application.Services.BookingService
         {
             var booking = await bookingRepository.SelectByIdAsync(bookingId);
             await bookingRepository.RemoveAsync(bookingId);
+            await bookingRepository.SaveChangesAsync();
+
         }
 
-        public async Task UpdateBookingAsync(BookingDto updateBookingDto)
+        public async Task UpdateBookingAsync(BookingUpdateDto updateBookingDto)
         {
             var BookEntity = mapper.Map<Booking>(updateBookingDto);
             await bookingRepository.UpdateAsync(BookEntity);
+            await bookingRepository.SaveChangesAsync();
         }
     }
 }

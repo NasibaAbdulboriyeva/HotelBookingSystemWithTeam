@@ -11,5 +11,8 @@ public class Room
     public long HotelId { get; set; }
     public Hotel Hotel { get; set; }
 
-    public List<BookingRoom> BookingRooms { get; set; } = new List<BookingRoom>();
+    public ICollection<BookingRoom> BookingRooms { get; set; } = new List<BookingRoom>();
+    public ICollection<RoomPhoto>? RoomPhotos { get; set; } = new List<RoomPhoto>();
+    public ICollection<RoomPhoto>? RoomTypes { get; set; } = new List<RoomPhoto>();
+
 }
