@@ -8,7 +8,6 @@ using HotelBookingSystem.Application.Dtos.CountryDto;
 using HotelBookingSystem.Application.Dtos.HotelDtos;
 using HotelBookingSystem.Application.Dtos.PaymentDtos;
 using HotelBookingSystem.Application.Dtos.ReviewDtos;
-using HotelBookingSystem.Application.Dtos.RoleDtos;
 using HotelBookingSystem.Application.Dtos.RoomDtos;
 using HotelBookingSystem.Application.Dtos.RoomPhotoDto;
 using HotelBookingSystem.Application.Dtos.RoomTypeDto;
@@ -17,10 +16,18 @@ using HotelBookingSystem.Application.Dtos.UserDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Application.Services.AffairService;
 using HotelBookingSystem.Application.Services.AuthService;
+using HotelBookingSystem.Application.Services.BookingService;
 using HotelBookingSystem.Application.Services.CardServices;
+using HotelBookingSystem.Application.Services.CityService;
 using HotelBookingSystem.Application.Services.ComplaintService;
+using HotelBookingSystem.Application.Services.CountryService;
+using HotelBookingSystem.Application.Services.CountryServices;
 using HotelBookingSystem.Application.Services.HotelService;
+using HotelBookingSystem.Application.Services.Implementations;
 using HotelBookingSystem.Application.Services.ReviewService;
+using HotelBookingSystem.Application.Services.RoomPhotoService;
+using HotelBookingSystem.Application.Services.RoomTypeService;
+using HotelBookingSystem.Application.Services.RoomTypeServices;
 using HotelBookingSystem.Application.Services.TokenService;
 using HotelBookingSystem.Application.Services.UserServices;
 using HotelBookingSystem.Application.Validators.BookingValidator;
@@ -31,7 +38,6 @@ using HotelBookingSystem.Application.Validators.CountryValidator;
 using HotelBookingSystem.Application.Validators.HotelValidator;
 using HotelBookingSystem.Application.Validators.PaymentValidator;
 using HotelBookingSystem.Application.Validators.ReviewValidator;
-using HotelBookingSystem.Application.Validators.RoleValidator;
 using HotelBookingSystem.Application.Validators.RoomPhotoValidator;
 using HotelBookingSystem.Application.Validators.RoomTypeValidator;
 using HotelBookingSystem.Application.Validators.RoomValidator;
@@ -39,6 +45,7 @@ using HotelBookingSystem.Application.Validators.ServiceValidator;
 using HotelBookingSystem.Application.Validators.UserValidator;
 using HotelBookingSystem.Infrastructure;
 using HotelBookingSystem.Infrastructure.Persistence.Repositories;
+using HotelBookingSystem.Infrastructure.Services.RoomPhotoServices;
 
 namespace HotelBookingSystem.Web.Configurations;
 
@@ -56,7 +63,6 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<IValidator<CreateComplaintDto>, ComplaintCreateValidator>();
         builder.Services.AddScoped<IValidator<CountryCreateDto>, CountryCreateValidator>();
         builder.Services.AddScoped<IValidator<CreateReviewDto>, ReviewCreateValidator>();
-        builder.Services.AddScoped<IValidator<CreateRoleDto>, RoleCreateValidator>();
         builder.Services.AddScoped<IValidator<CreateRoomDto>, RoomCreateValidator>();
         builder.Services.AddScoped<IValidator<CreateRoomPhotoDto>, RoomPhotoCreateValidator>();
         builder.Services.AddScoped<IValidator<CreateRoomTypeDto>, RoomTypeCreateValidator>();
@@ -68,10 +74,10 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
 
-        builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
         //builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
         builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+        builder.Services.AddScoped<IBookingService, BookingService>();
 
         builder.Services.AddScoped<IComplaintRepository, ComplaintRepository>();
         builder.Services.AddScoped<IComplaintService, ComplaintService>();
@@ -83,11 +89,21 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<IHotelRepository, HotelRepository>();
         builder.Services.AddScoped<IHotelService, HotelService>();
 
+        builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+        builder.Services.AddScoped<ICountryService, CountryService>();
+
+        builder.Services.AddScoped<ICityRepository, CityRepository>();
+        builder.Services.AddScoped<ICityService, CityService>();
+
+        builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
+        builder.Services.AddScoped<IRoomTypeService, RoomTypeService>();
+
+        builder.Services.AddScoped<IRoomPhotoRepository, RoomPhotoRepository>();
+        builder.Services.AddScoped<IRoomPhotoService, RoomPhotoService>();
+
         builder.Services.AddScoped<IRoomRepository, RoomRepository>();
         builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
         builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
-        builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-        builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
         builder.Services.AddScoped<ICardRepository, CardRepository>();
         builder.Services.AddScoped<ICardService, CardService>();
 

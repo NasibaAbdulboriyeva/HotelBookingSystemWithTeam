@@ -1,4 +1,5 @@
 ﻿using HotelBookingSystem.Domain.Entities;
+using HotelBookingSystem.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingSystem.Infrastructure.Persistence
@@ -17,11 +18,9 @@ namespace HotelBookingSystem.Infrastructure.Persistence
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }

@@ -21,6 +21,12 @@ public class PaymentConfiguration : IEntityTypeConfiguration<Payment>
         builder.HasOne(p => p.Booking)
           .WithOne(b => b.Payment)
           .HasForeignKey<Payment>(p => p.BookingId);
+
+        builder.HasOne(p => p.User)
+         .WithMany(u => u.Payments)
+         .HasForeignKey(p => p.UserId)
+         .OnDelete(DeleteBehavior.Restrict);
+
     }
 }
 

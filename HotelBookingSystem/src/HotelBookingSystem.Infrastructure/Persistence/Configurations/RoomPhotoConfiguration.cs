@@ -20,6 +20,12 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Configurations
             builder.Property(roomPhoto => roomPhoto.RoomPhotoId).ValueGeneratedOnAdd();
 
             builder.HasIndex(roomPhoto => roomPhoto.PhotoName).IsUnique();
+     
+
+            builder.HasOne(roomPhoto => roomPhoto.Room)
+                .WithMany(room => room.RoomPhotos)
+                .HasForeignKey(roomPhoto => roomPhoto.RoomId)
+                .OnDelete(DeleteBehavior.Cascade);
 
 
 

@@ -12,7 +12,6 @@ public class Hotel
     public City City { get; set; }
     public long  CityId { get; set; }
     public List<Room> Rooms { get; set; } = new List<Room>();
-    public List<Role> Roles { get; set; } = new List<Role>();
     public List<Service> Services { get; set; } = new List<Service>();
     public List<Review> Reviews { get; set; } = new List<Review>();
     public List<Complaint> Complaints { get; set; } = new List<Complaint>();

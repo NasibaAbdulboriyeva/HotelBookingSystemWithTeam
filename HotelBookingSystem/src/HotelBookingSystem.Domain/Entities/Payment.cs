@@ -16,5 +16,7 @@ public class Payment
     public DateTime PaidAt { get; set; }
     public long BookingId { get; set; }
     public Booking Booking { get; set; }
-    
+    public long UserId { get; set; }
+    public User User { get; set; }
+
 }

@@ -30,9 +30,6 @@ namespace HotelBookingSystem.Application.Validators.BookingValidator
             RuleFor(x => x.RoomId)
                 .GreaterThan(0).WithMessage("Room ID must be a valid positive number.");
 
-            RuleFor(x => x.Payment)
-                .NotNull().WithMessage("Payment info is required.")
-                .SetValidator(new PaymentCreateValidator());
         }
     }
 }

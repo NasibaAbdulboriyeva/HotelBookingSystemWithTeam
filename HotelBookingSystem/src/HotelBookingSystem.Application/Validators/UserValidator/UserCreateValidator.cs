@@ -18,6 +18,11 @@ public class UserCreateValidator : AbstractValidator<CreateUserDto>
             .WithMessage("Email is required")
             .EmailAddress()
             .WithMessage("Invalid email format");
+        RuleFor(x => x.UserName)
+           .NotEmpty().WithMessage("UserName is required")
+           .MinimumLength(4).WithMessage("UserName must be at least 4 characters")
+           .MaximumLength(20).WithMessage("UserName must be at most 20 characters")
+           .Matches("^[a-zA-Z0-9_.-]*$").WithMessage("UserName can only contain letters, digits, underscores, dashes, or dots");
 
         RuleFor(x => x.FirstName)
            .Length(2, 50)

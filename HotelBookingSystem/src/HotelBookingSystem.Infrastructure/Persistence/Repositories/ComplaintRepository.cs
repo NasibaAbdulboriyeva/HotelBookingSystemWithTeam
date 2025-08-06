@@ -55,6 +55,7 @@ public class ComplaintRepository : IComplaintRepository
     {
 
         _context.Update(complaint);
+        await _context.SaveChangesAsync();
     }
     public async Task<ICollection<Complaint>> SelectAllAsync()
     {

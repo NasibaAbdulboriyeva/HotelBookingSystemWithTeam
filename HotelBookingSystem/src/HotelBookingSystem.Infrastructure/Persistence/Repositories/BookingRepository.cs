@@ -19,6 +19,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         public async Task<long> InsertAsync(Booking booking)
         {
             await _context.Bookings.AddAsync(booking);
+            await _context.SaveChangesAsync();
             return booking.BookingId;
         }
 
@@ -69,6 +70,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         public async Task UpdateAsync(Booking booking)
         {
             _context.Bookings.Update(booking);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<int> SaveChangesAsync()

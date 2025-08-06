@@ -4,6 +4,7 @@ using HotelBookingSystem.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelBookingSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250804164836_Changes")]
+    partial class Changes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -296,15 +299,10 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("PaymentId");
 
                     b.HasIndex("BookingId")
                         .IsUnique();
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Payments", (string)null);
                 });
@@ -646,15 +644,7 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HotelBookingSystem.Domain.Entities.User", "User")
-                        .WithMany("Payments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Booking");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HotelBookingSystem.Domain.Entities.RefreshToken", b =>
@@ -777,8 +767,6 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                     b.Navigation("Cards");
 
                     b.Navigation("Complaints");
-
-                    b.Navigation("Payments");
 
                     b.Navigation("RefreshTokens");
 

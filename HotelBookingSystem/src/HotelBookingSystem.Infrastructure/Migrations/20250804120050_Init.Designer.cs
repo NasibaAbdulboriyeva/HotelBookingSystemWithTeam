@@ -4,6 +4,7 @@ using HotelBookingSystem.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelBookingSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250804120050_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -296,15 +299,10 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("PaymentId");
 
                     b.HasIndex("BookingId")
                         .IsUnique();
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Payments", (string)null);
                 });
@@ -398,8 +396,10 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("int");
 
-                    b.Property<long>("RoomTypeId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("RoomType")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("RoomId");
 
@@ -407,8 +407,6 @@ namespace HotelBookingSystem.Infrastructure.Migrations
 
                     b.HasIndex("RoomNumber")
                         .IsUnique();
-
-                    b.HasIndex("RoomTypeId");
 
                     b.ToTable("Rooms", (string)null);
                 });
@@ -516,6 +514,9 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(15)
@@ -546,6 +547,21 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("RoomRoomType", b =>
+                {
+                    b.Property<long>("RoomTypesRoomTypeId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("RoomsRoomId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("RoomTypesRoomTypeId", "RoomsRoomId");
+
+                    b.HasIndex("RoomsRoomId");
+
+                    b.ToTable("RoomRoomType");
                 });
 
             modelBuilder.Entity("HotelBookingSystem.Domain.Entities.Booking", b =>
@@ -646,15 +662,7 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HotelBookingSystem.Domain.Entities.User", "User")
-                        .WithMany("Payments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Booking");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HotelBookingSystem.Domain.Entities.RefreshToken", b =>
@@ -695,15 +703,7 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HotelBookingSystem.Domain.Entities.RoomType", "RoomType")
-                        .WithMany("Rooms")
-                        .HasForeignKey("RoomTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Hotel");
-
-                    b.Navigation("RoomType");
                 });
 
             modelBuilder.Entity("HotelBookingSystem.Domain.Entities.RoomPhoto", b =>
@@ -726,6 +726,21 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Hotel");
+                });
+
+            modelBuilder.Entity("RoomRoomType", b =>
+                {
+                    b.HasOne("HotelBookingSystem.Domain.Entities.RoomType", null)
+                        .WithMany()
+                        .HasForeignKey("RoomTypesRoomTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HotelBookingSystem.Domain.Entities.Room", null)
+                        .WithMany()
+                        .HasForeignKey("RoomsRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("HotelBookingSystem.Domain.Entities.Booking", b =>
@@ -765,11 +780,6 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                     b.Navigation("RoomPhotos");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Domain.Entities.RoomType", b =>
-                {
-                    b.Navigation("Rooms");
-                });
-
             modelBuilder.Entity("HotelBookingSystem.Domain.Entities.User", b =>
                 {
                     b.Navigation("Bookings");
@@ -777,8 +787,6 @@ namespace HotelBookingSystem.Infrastructure.Migrations
                     b.Navigation("Cards");
 
                     b.Navigation("Complaints");
-
-                    b.Navigation("Payments");
 
                     b.Navigation("RefreshTokens");
 

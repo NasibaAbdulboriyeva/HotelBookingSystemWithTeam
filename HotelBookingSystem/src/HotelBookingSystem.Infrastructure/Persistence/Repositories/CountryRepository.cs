@@ -27,6 +27,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         public async Task UpdateAsync(Country country)
         {
             _context.Countries.Update(country);
+            await _context.SaveChangesAsync();
         }
 
         public async Task RemoveAsync(long id)

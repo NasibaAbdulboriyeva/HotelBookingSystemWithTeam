@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HotelBookingSystem.Web.Controllers
 {
+
+    [Route("api/[controller]")]
+    [ApiController]
     public class BookingController : ControllerBase
     {
         private readonly IBookingService bookingService;
@@ -57,7 +60,7 @@ namespace HotelBookingSystem.Web.Controllers
             await bookingService.DeleteBookingAsync(bookingId);
         }
 
-        [HttpGet("GetAll")]
+        [HttpPut("Update")]
         public async Task UpdateBookingAsync(BookingUpdateDto updateBookingDto)
         {
             await bookingService.UpdateBookingAsync(updateBookingDto);

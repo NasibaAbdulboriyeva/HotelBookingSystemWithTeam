@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using HotelBookingSystem.Application.Dtos.BookingDtos;
-using HotelBookingSystem.Application.Dtos.ServiceDtos;
+using HotelBookingSystem.Application.Dtos.PaymentDtos;
 using HotelBookingSystem.Application.RepositoryInterfaces;
 using HotelBookingSystem.Domain.Entities;
 using HotelBookingSystem.Domain.Enums;
@@ -11,13 +11,15 @@ namespace HotelBookingSystem.Application.Services.BookingService
     public class BookingService : IBookingService
     {
         private readonly IBookingRepository bookingRepository;
+        private readonly IPaymentRepository _paymentRepository;
         private readonly IMapper mapper;
         private readonly IValidator<CreateBookingDto> _createBookingDtoValidator;
-        public BookingService(IBookingRepository Booking, IMapper Map, IValidator<CreateBookingDto> createBookingDtoValidator)
+        public BookingService(IBookingRepository Booking, IPaymentRepository paymentRepository, IMapper Map, IValidator<CreateBookingDto> createBookingDtoValidator)
         {
             bookingRepository = Booking;
             mapper = Map;
-           _createBookingDtoValidator = createBookingDtoValidator;
+            _createBookingDtoValidator = createBookingDtoValidator;
+            _paymentRepository = paymentRepository;
         }
         public async Task<long> CreateBookingAsync(CreateBookingDto createBookingDto)
         {
@@ -27,12 +29,18 @@ namespace HotelBookingSystem.Application.Services.BookingService
             if (!validationResult.IsValid)
                 throw new ValidationException(validationResult.Errors);
 
+            // DTO dan entitylarni yaratamiz
             var bookingEntity = mapper.Map<Booking>(createBookingDto);
-            await bookingRepository.InsertAsync(bookingEntity);
+
+            // 1. Bookingni saqlaymiz
+            var bookingId = await bookingRepository.InsertAsync(bookingEntity);
             await bookingRepository.SaveChangesAsync();
 
-            return bookingEntity.BookingId;
+            return bookingId;
+
+
         }
+
         public async Task<ICollection<BookingDto>> GetActiveBookingsByRoomIdAsync(long roomId)
         {
             ArgumentNullException.ThrowIfNull(roomId);

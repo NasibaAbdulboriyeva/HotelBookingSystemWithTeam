@@ -41,7 +41,7 @@ public class CardService : ICardService
                 throw new ValidationException("Card with this number already exists.");
         }
 
-        if (existingCards.Count() >= 5)
+        if (existingCards.Count >= 5)
             throw new ValidationException("You can only save up to 5 cards.");
 
         var selectedCards = existingCards.Where(c => c.SelectedForPayment).ToList();

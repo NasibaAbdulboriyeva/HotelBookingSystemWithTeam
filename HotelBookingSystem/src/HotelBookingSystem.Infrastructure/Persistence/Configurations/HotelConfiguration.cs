@@ -34,9 +34,7 @@ public class HotelConfiguration : IEntityTypeConfiguration<Hotel>
             .WithOne(r => r.Hotel)
             .HasForeignKey(r => r.HotelId);
 
-        builder.HasMany(h => h.Roles)
-            .WithOne(r => r.Hotel)
-            .HasForeignKey(r => r.HotelId);
+     
 
         builder.HasMany(h => h.Complaints)
             .WithOne(c => c.Hotel)

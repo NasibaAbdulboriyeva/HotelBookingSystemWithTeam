@@ -29,8 +29,9 @@ public class UserRepository : IUserRepository
 
     public async Task<User> SelectByEmailAsync(string email)
     {
-        return await _context.Users
-            .FirstOrDefaultAsync(u => u.Email == email);
+       var user= await _context.Users
+           .FirstOrDefaultAsync(u => u.Email == email);
+        return user;
     }
 
     public async Task<User> SelectByIdAsync(long id)
@@ -48,14 +49,16 @@ public class UserRepository : IUserRepository
 
     public async Task<User> SelectUserByUserNameAsync(string userName)
     {
-        return await _context.Users
-                    .AsNoTracking()
-                    .FirstOrDefaultAsync(u => u.FirstName == userName);
+        var user = await _context.Users
+                    .FirstOrDefaultAsync(u => u.UserName == userName);
+        return user;
     }
 
     public async Task UpdateAsync(User user)
     {
         _context.Users.Update(user);
+        await _context.SaveChangesAsync();
+
     }
     public async Task<ICollection<User>> SelectAllAsync()
     {

@@ -1,0 +1,106 @@
+2025-08-06 09:05:37.507 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-06 09:05:37.722 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-06 09:05:37.872 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 09:05:37.873 +05:00 [INF] Hosting environment: Development
+2025-08-06 09:05:37.873 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-06 09:05:38.625 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-06 09:05:38.923 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-06 09:05:38.933 +05:00 [INF] Request to /swagger/index.html took 0.107 seconds with status code 200
+2025-08-06 09:05:38.934 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 10.9051ms
+2025-08-06 09:05:38.937 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 317.5138ms
+2025-08-06 09:05:38.943 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-06 09:05:38.993 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.8145ms
+2025-08-06 09:05:39.115 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-06 09:05:39.310 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.191 seconds with status code 200
+2025-08-06 09:05:39.311 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 195.3171ms
+2025-08-06 09:08:53.798 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/api/Booking/getActiveBookingByRoomId?roomId=4 - null null
+2025-08-06 09:08:53.811 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 09:08:53.839 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetActiveBookingsByRoomIdAsync (HotelBookingSystem.Web)'
+2025-08-06 09:08:53.888 +05:00 [INF] Route matched with {action = "GetActiveBookingsByRoomId", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.ICollection`1[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto]] GetActiveBookingsByRoomIdAsync(Int64) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-06 09:08:56.248 +05:00 [INF] Executed DbCommand (61ms) [Parameters=[@__roomId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[CreatedAt], [b].[EndDate], [b].[IsActive], [b].[StartDate], [b].[Status], [b].[UserId]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__roomId_0 AND [b].[IsActive] = CAST(1 AS bit)
+2025-08-06 09:08:56.308 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto, HotelBookingSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-06 09:08:56.336 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.GetActiveBookingsByRoomIdAsync (HotelBookingSystem.Web) in 2442.2589ms
+2025-08-06 09:08:56.337 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetActiveBookingsByRoomIdAsync (HotelBookingSystem.Web)'
+2025-08-06 09:08:56.339 +05:00 [INF] Request to /api/Booking/getActiveBookingByRoomId took 2.533 seconds with status code 200
+2025-08-06 09:08:56.347 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/api/Booking/getActiveBookingByRoomId?roomId=4 - 200 null application/json; charset=utf-8 2548.5614ms
+2025-08-06 09:09:25.637 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/api/Booking/GetActiveBookingsByUserId?userId=6 - null null
+2025-08-06 09:09:25.643 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetActiveBookingsByUserIdAsync (HotelBookingSystem.Web)'
+2025-08-06 09:09:25.651 +05:00 [INF] Route matched with {action = "GetActiveBookingsByUserId", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.ICollection`1[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto]] GetActiveBookingsByUserIdAsync(Int64) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-06 09:09:25.777 +05:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[CreatedAt], [b].[EndDate], [b].[IsActive], [b].[StartDate], [b].[Status], [b].[UserId]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__p_0
+2025-08-06 09:09:25.798 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'HotelBookingSystem.Infrastructure.Persistence.AppDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-08-06 09:09:25.804 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.GetActiveBookingsByUserIdAsync (HotelBookingSystem.Web) in 152.5027ms
+2025-08-06 09:09:25.805 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetActiveBookingsByUserIdAsync (HotelBookingSystem.Web)'
+2025-08-06 09:09:25.815 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/api/Booking/GetActiveBookingsByUserId?userId=6 - 500 null application/json 177.6144ms
+2025-08-06 09:09:25.883 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'HotelBookingSystem.Infrastructure.Persistence.AppDbContext'.
+System.InvalidOperationException: Недопустимая попытка вызвать ReadAsync при закрытом устройстве чтения.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Недопустимая попытка вызвать ReadAsync при закрытом устройстве чтения.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-08-06 09:09:52.398 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/api/Booking/GetAll - null null
+2025-08-06 09:09:52.399 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetAllAsync (HotelBookingSystem.Web)'
+2025-08-06 09:09:52.404 +05:00 [INF] Route matched with {action = "GetAll", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.ICollection`1[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto]] GetAllAsync() on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-06 09:09:52.555 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[CreatedAt], [b].[EndDate], [b].[IsActive], [b].[StartDate], [b].[Status], [b].[UserId]
+FROM [Bookings] AS [b]
+2025-08-06 09:09:52.558 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto, HotelBookingSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-06 09:09:52.570 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.GetAllAsync (HotelBookingSystem.Web) in 165.3123ms
+2025-08-06 09:09:52.570 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetAllAsync (HotelBookingSystem.Web)'
+2025-08-06 09:09:52.571 +05:00 [INF] Request to /api/Booking/GetAll took 0.171 seconds with status code 200
+2025-08-06 09:09:52.571 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/api/Booking/GetAll - 200 null application/json; charset=utf-8 173.0184ms
+2025-08-06 09:10:11.547 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/api/Booking/GetByID?bookingID=10 - null null
+2025-08-06 09:10:11.548 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetByIdBookingAsync (HotelBookingSystem.Web)'
+2025-08-06 09:10:11.553 +05:00 [INF] Route matched with {action = "GetByIdBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto] GetByIdBookingAsync(Int64) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-06 09:10:11.599 +05:00 [INF] Executed DbCommand (35ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[CreatedAt], [b].[EndDate], [b].[IsActive], [b].[StartDate], [b].[Status], [b].[UserId]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__p_0
+2025-08-06 09:10:11.608 +05:00 [INF] Executing ObjectResult, writing value of type 'HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto'.
+2025-08-06 09:10:11.613 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.GetByIdBookingAsync (HotelBookingSystem.Web) in 59.8941ms
+2025-08-06 09:10:11.613 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetByIdBookingAsync (HotelBookingSystem.Web)'
+2025-08-06 09:10:11.614 +05:00 [INF] Request to /api/Booking/GetByID took 0.065 seconds with status code 200
+2025-08-06 09:10:11.614 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/api/Booking/GetByID?bookingID=10 - 200 null application/json; charset=utf-8 67.1698ms
+2025-08-06 09:10:31.251 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/api/Booking/GetByStatus?status=1 - null null
+2025-08-06 09:10:31.252 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetByStatusAsync (HotelBookingSystem.Web)'
+2025-08-06 09:10:31.259 +05:00 [INF] Route matched with {action = "GetByStatus", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.ICollection`1[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto]] GetByStatusAsync(HotelBookingSystem.Domain.Enums.BookingStatus) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-06 09:10:31.346 +05:00 [INF] Executed DbCommand (62ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[CreatedAt], [b].[EndDate], [b].[IsActive], [b].[StartDate], [b].[Status], [b].[UserId]
+FROM [Bookings] AS [b]
+WHERE [b].[Status] = @__status_0
+2025-08-06 09:10:31.347 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[HotelBookingSystem.Application.Dtos.BookingDtos.BookingDto, HotelBookingSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-06 09:10:31.347 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.GetByStatusAsync (HotelBookingSystem.Web) in 87.5457ms
+2025-08-06 09:10:31.347 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.GetByStatusAsync (HotelBookingSystem.Web)'
+2025-08-06 09:10:31.347 +05:00 [INF] Request to /api/Booking/GetByStatus took 0.095 seconds with status code 200
+2025-08-06 09:10:31.348 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/api/Booking/GetByStatus?status=1 - 200 null application/json; charset=utf-8 96.4219ms
+2025-08-06 09:10:45.940 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5117/api/Booking/DeleteBooking?bookingId=10 - null null
+2025-08-06 09:10:45.941 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.DeleteBookingAsync (HotelBookingSystem.Web)'
+2025-08-06 09:10:45.945 +05:00 [INF] Route matched with {action = "DeleteBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task DeleteBookingAsync(Int64) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-06 09:10:45.971 +05:00 [INF] Executed DbCommand (21ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[CreatedAt], [b].[EndDate], [b].[IsActive], [b].[StartDate], [b].[Status], [b].[UserId]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__p_0
+2025-08-06 09:10:46.201 +05:00 [INF] Executed DbCommand (49ms) [Parameters=[@p0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Bookings]
+OUTPUT 1
+WHERE [BookingId] = @p0;
+2025-08-06 09:10:46.226 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.DeleteBookingAsync (HotelBookingSystem.Web) in 280.2686ms
+2025-08-06 09:10:46.226 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.DeleteBookingAsync (HotelBookingSystem.Web)'
+2025-08-06 09:10:46.226 +05:00 [INF] Request to /api/Booking/DeleteBooking took 0.285 seconds with status code 200
+2025-08-06 09:10:46.227 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5117/api/Booking/DeleteBooking?bookingId=10 - 200 0 null 286.2956ms

@@ -30,6 +30,7 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
                 throw new ArgumentNullException(nameof(bookingRoom));
             }
             _context.BookingRooms.Remove(bookingRoom);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<ICollection<BookingRoom>> SelectByBookingIdAsync(long bookingId)
@@ -66,6 +67,8 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         public async Task UpdateAsync(BookingRoom bookingRoom)
         {
             _context.BookingRooms.Update(bookingRoom);
+            await _context.SaveChangesAsync();
+
         }
         public async Task<int> SaveChangesAsync()
         {

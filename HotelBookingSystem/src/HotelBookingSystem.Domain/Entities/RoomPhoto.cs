@@ -9,7 +9,7 @@ namespace HotelBookingSystem.Domain.Entities
     public class RoomPhoto
     {
         public long RoomPhotoId { get; set; }             // Primary key for the photo
-        public int RoomId { get; set; }               // Foreign key to the Room
+        public long RoomId { get; set; }               // Foreign key to the Room
         public string PhotoName { get; set; }         // File path or URL to the photo
 
         public Room Room { get; set; }

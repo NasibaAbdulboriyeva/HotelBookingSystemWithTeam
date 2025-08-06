@@ -19,6 +19,10 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Configurations
 
             builder.Property(roomType => roomType.RoomTypeId).ValueGeneratedOnAdd();
 
+            builder.HasMany(roomType => roomType.Rooms)
+                .WithOne(room => room.RoomType)
+                .HasForeignKey(roomPhoto => roomPhoto.RoomTypeId)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

@@ -8,5 +8,5 @@ public class PaymentDto
     public PaymentStatus Status { get; set; }
     public PaymentMethod PaymentMethod { get; set; }
     public DateTime PaidAt { get; set; }
-    public long BookingId { get; set; }
+    public long? BookingId { get; set; }
 }

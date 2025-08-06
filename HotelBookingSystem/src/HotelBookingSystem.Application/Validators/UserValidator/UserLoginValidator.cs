@@ -7,7 +7,7 @@ public class UserLoginValidator : AbstractValidator<UserLoginDto>
 {
     public UserLoginValidator()
     {
-        RuleFor(x => x.Email)
+        RuleFor(x => x.UserName)
             .NotEmpty()
             .WithMessage("UserName is required")
             .Length(3, 20)

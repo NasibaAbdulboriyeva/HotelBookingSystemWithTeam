@@ -14,7 +14,6 @@ public class RoomConfiguration : IEntityTypeConfiguration<Room>
         builder.Property(r => r.RoomNumber).IsRequired().HasMaxLength(10);
         builder.HasIndex(r => r.RoomNumber).IsUnique();
 
-        builder.Property(r => r.RoomType).IsRequired().HasMaxLength(10);
 
         builder.Property(r => r.Price).IsRequired().HasColumnType("decimal(18,2)");
 
@@ -24,8 +23,16 @@ public class RoomConfiguration : IEntityTypeConfiguration<Room>
             .WithMany(h => h.Rooms)
             .HasForeignKey(r => r.HotelId);
 
+        builder.HasOne(r => r.RoomType)
+         .WithMany(h => h.Rooms)
+         .HasForeignKey(r => r.RoomTypeId);
+
         builder.HasMany(r => r.BookingRooms)
        .WithOne(br => br.Room)
        .HasForeignKey(br => br.RoomId);
+        builder.HasMany(r => r.RoomPhotos)
+            .WithOne(rp => rp.Room)
+            .HasForeignKey(rp => rp.RoomId);
+      
     }
 }

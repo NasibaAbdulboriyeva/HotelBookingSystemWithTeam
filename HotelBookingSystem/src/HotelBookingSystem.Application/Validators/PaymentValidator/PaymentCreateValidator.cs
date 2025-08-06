@@ -13,8 +13,7 @@ public class PaymentCreateValidator : AbstractValidator<CreatePaymentDto>
             .NotEmpty().WithMessage("Payment method is required.")
             .IsInEnum().WithMessage("Invalid payment method specified.");
 
-        RuleFor(x => x.BookingId)
-            .GreaterThan(0).WithMessage("Booking ID must be a valid positive number.");
+     
     }
 }
 

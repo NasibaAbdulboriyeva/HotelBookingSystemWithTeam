@@ -1,0 +1,523 @@
+2025-08-05 07:03:49.624 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 07:03:49.833 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 07:03:49.982 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 07:03:49.983 +05:00 [INF] Hosting environment: Development
+2025-08-05 07:03:49.983 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 07:03:50.277 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 07:03:51.157 +05:00 [INF] Request to /swagger/index.html took 0.127 seconds with status code 200
+2025-08-05 07:03:51.158 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 07:03:51.159 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 07:03:51.163 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 892.1331ms
+2025-08-05 07:03:51.163 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 6.414ms
+2025-08-05 07:03:51.217 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.4928ms
+2025-08-05 07:03:51.366 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 07:03:51.585 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.216 seconds with status code 200
+2025-08-05 07:03:51.586 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 219.8853ms
+2025-08-05 09:23:31.828 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 09:23:31.945 +05:00 [INF] Request to /swagger/index.html took 0.012 seconds with status code 200
+2025-08-05 09:23:31.945 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 131.3765ms
+2025-08-05 09:23:32.580 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 09:23:32.580 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 09:23:32.584 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.3922ms
+2025-08-05 09:23:32.665 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 85.221ms
+2025-08-05 09:23:32.805 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 09:23:32.882 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.076 seconds with status code 200
+2025-08-05 09:23:32.882 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 77.2603ms
+2025-08-05 10:04:05.217 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 10:04:05.299 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 93.0089ms
+2025-08-05 10:04:05.632 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 10:04:05.876 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.194 seconds with status code 200
+2025-08-05 10:04:05.878 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 245.776ms
+2025-08-05 10:17:58.186 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 10:17:58.207 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 26.4292ms
+2025-08-05 10:17:58.347 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 10:17:58.491 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.099 seconds with status code 200
+2025-08-05 10:17:58.492 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 144.2223ms
+2025-08-05 11:48:44.157 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 11:48:44.415 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 11:48:44.560 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 11:48:44.561 +05:00 [INF] Hosting environment: Development
+2025-08-05 11:48:44.561 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 11:48:45.591 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 11:48:45.925 +05:00 [INF] Request to /swagger/index.html took 0.115 seconds with status code 200
+2025-08-05 11:48:45.944 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 354.3137ms
+2025-08-05 11:48:45.960 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 11:48:45.961 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 11:48:45.964 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 6.0119ms
+2025-08-05 11:48:46.025 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.7818ms
+2025-08-05 11:48:46.337 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 11:48:46.510 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.17 seconds with status code 200
+2025-08-05 11:48:46.511 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 173.1977ms
+2025-08-05 11:49:54.198 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 251
+2025-08-05 11:49:54.212 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 11:49:54.227 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 11:49:54.276 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 11:49:54.935 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 651.8032ms
+2025-08-05 11:49:54.937 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 11:49:54.950 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 500 null application/json 751.7534ms
+2025-08-05 11:50:09.225 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 253
+2025-08-05 11:50:09.232 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 11:50:09.233 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 11:50:09.254 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 20.6466ms
+2025-08-05 11:50:09.254 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 11:50:09.256 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 500 null application/json 30.1119ms
+2025-08-05 11:52:03.632 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 253
+2025-08-05 11:52:03.633 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 11:52:03.633 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 11:52:03.648 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 15.3812ms
+2025-08-05 11:52:03.649 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 11:52:03.650 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 500 null application/json 17.7146ms
+2025-08-05 11:54:29.347 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 11:54:29.513 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 11:54:29.658 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 11:54:29.659 +05:00 [INF] Hosting environment: Development
+2025-08-05 11:54:29.659 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 11:54:29.978 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 11:54:30.238 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 11:54:30.238 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 11:54:30.242 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 4.1765ms
+2025-08-05 11:54:30.245 +05:00 [INF] Request to /swagger/index.html took 0.115 seconds with status code 200
+2025-08-05 11:54:30.249 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 274.0172ms
+2025-08-05 11:54:30.279 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.5049ms
+2025-08-05 11:54:30.553 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 11:54:30.737 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.181 seconds with status code 200
+2025-08-05 11:54:30.738 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 185.115ms
+2025-08-05 12:35:49.442 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 12:35:49.503 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-08-05 12:35:49.556 +05:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-08-05 12:35:49.648 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-08-05 12:35:49.659 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 12:35:49.660 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-08-05 12:35:49.670 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-08-05 12:35:49.683 +05:00 [INF] Applying migration '20250805073527_InitialCreate'.
+2025-08-05 12:35:49.802 +05:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UserId] bigint NOT NULL DEFAULT CAST(0 AS bigint);
+2025-08-05 12:35:49.819 +05:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Payments_UserId] ON [Payments] ([UserId]);
+2025-08-05 12:35:49.857 +05:00 [ERR] Failed executing DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD CONSTRAINT [FK_Payments_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([UserId]) ON DELETE CASCADE;
+2025-08-05 12:37:41.052 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 12:37:41.125 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-08-05 12:37:41.179 +05:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-08-05 12:37:43.777 +05:00 [INF] Executed DbCommand (2,486ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-08-05 12:37:43.794 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 12:37:43.797 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-08-05 12:37:43.830 +05:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-08-05 12:37:43.847 +05:00 [INF] Applying migration '20250805073716_InitialCreate'.
+2025-08-05 12:37:43.948 +05:00 [ERR] Failed executing DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] DROP CONSTRAINT [FK_Payments_Users_UserId];
+2025-08-05 12:40:29.116 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 12:40:29.194 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-08-05 12:40:29.233 +05:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-08-05 12:40:29.324 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-08-05 12:40:29.337 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 12:40:29.339 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-08-05 12:40:29.345 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-08-05 12:40:29.361 +05:00 [INF] Applying migration '20250805074011_InitialCreate'.
+2025-08-05 12:40:29.406 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250805074011_InitialCreate', N'9.0.6');
+2025-08-05 12:40:29.413 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-08-05 12:41:18.032 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 12:41:18.278 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 12:41:18.420 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 12:41:18.421 +05:00 [INF] Hosting environment: Development
+2025-08-05 12:41:18.421 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 12:41:19.476 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 12:41:19.792 +05:00 [INF] Request to /swagger/index.html took 0.11 seconds with status code 200
+2025-08-05 12:41:19.798 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 325.27ms
+2025-08-05 12:41:19.803 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 12:41:19.806 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 12:41:19.809 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 6.0523ms
+2025-08-05 12:41:19.848 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.1412ms
+2025-08-05 12:41:19.983 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 12:41:20.167 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.181 seconds with status code 200
+2025-08-05 12:41:20.167 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 184.4584ms
+2025-08-05 12:47:25.778 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 254
+2025-08-05 12:47:25.798 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 12:47:25.801 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:47:25.848 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 12:47:26.483 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 628.3024ms
+2025-08-05 12:47:26.484 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:47:26.496 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 500 null application/json 717.2898ms
+2025-08-05 12:49:47.433 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 254
+2025-08-05 12:49:47.438 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:49:47.439 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 12:49:49.393 +05:00 [INF] Executed DbCommand (48ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 12:49:49.446 +05:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[@p5='?' (DbType = Int64), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([BookingId], [PaidAmount], [PaidAt], [PaymentMethod], [Status], [UserId])
+OUTPUT INSERTED.[PaymentId]
+VALUES (@p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-05 12:49:49.483 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'HotelBookingSystem.Infrastructure.Persistence.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-05 12:49:49.488 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 2048.7406ms
+2025-08-05 12:49:49.489 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:49:49.499 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 500 null application/json 2066.491ms
+2025-08-05 12:53:11.674 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 12:53:11.840 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 12:53:11.993 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 12:53:11.993 +05:00 [INF] Hosting environment: Development
+2025-08-05 12:53:11.993 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 12:53:12.185 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 12:53:12.469 +05:00 [INF] Request to /swagger/index.html took 0.128 seconds with status code 200
+2025-08-05 12:53:12.470 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 12:53:12.470 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 12:53:12.473 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 290.5585ms
+2025-08-05 12:53:12.473 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.68ms
+2025-08-05 12:53:12.507 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.7868ms
+2025-08-05 12:53:12.823 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 12:53:13.027 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.199 seconds with status code 200
+2025-08-05 12:53:13.028 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 204.3252ms
+2025-08-05 12:53:56.525 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 254
+2025-08-05 12:53:56.537 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 12:53:56.542 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:53:56.603 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 12:53:57.169 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 559.8978ms
+2025-08-05 12:53:57.170 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:53:57.180 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 500 null application/json 654.521ms
+2025-08-05 12:55:44.335 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 12:55:44.501 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 12:55:44.621 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 12:55:44.621 +05:00 [INF] Hosting environment: Development
+2025-08-05 12:55:44.622 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 12:55:44.942 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 12:55:45.215 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 12:55:45.215 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 12:55:45.217 +05:00 [INF] Request to /swagger/index.html took 0.116 seconds with status code 200
+2025-08-05 12:55:45.218 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 4.666ms
+2025-08-05 12:55:45.221 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 283.2148ms
+2025-08-05 12:55:45.256 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.2773ms
+2025-08-05 12:55:46.167 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 12:55:46.303 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.133 seconds with status code 200
+2025-08-05 12:55:46.303 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 683.0342ms
+2025-08-05 12:56:24.750 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 254
+2025-08-05 12:56:24.765 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 12:56:24.771 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:56:24.818 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 12:56:27.340 +05:00 [INF] Executed DbCommand (54ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 12:56:27.422 +05:00 [ERR] Failed executing DbCommand (10ms) [Parameters=[@p5='?' (DbType = Int64), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([BookingId], [PaidAmount], [PaidAt], [PaymentMethod], [Status], [UserId])
+OUTPUT INSERTED.[PaymentId]
+VALUES (@p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-05 12:56:27.463 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'HotelBookingSystem.Infrastructure.Persistence.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-05 12:56:27.473 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 2650.0975ms
+2025-08-05 12:56:27.474 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 12:56:27.492 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 500 null application/json 2742.5259ms
+2025-08-05 13:02:22.175 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 13:02:22.333 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 13:02:22.472 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 13:02:22.473 +05:00 [INF] Hosting environment: Development
+2025-08-05 13:02:22.473 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 13:02:22.722 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 13:02:22.969 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 13:02:22.969 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 13:02:22.970 +05:00 [INF] Request to /swagger/index.html took 0.099 seconds with status code 200
+2025-08-05 13:02:22.972 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.0454ms
+2025-08-05 13:02:22.973 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 255.4291ms
+2025-08-05 13:02:23.000 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.8575ms
+2025-08-05 13:02:23.335 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 13:02:23.493 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.156 seconds with status code 200
+2025-08-05 13:02:23.494 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 159.3185ms
+2025-08-05 13:02:53.097 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 133
+2025-08-05 13:02:53.110 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 13:02:53.113 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:02:53.168 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:02:55.310 +05:00 [INF] Executed DbCommand (44ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:02:55.387 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:02:55.399 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 2225.2162ms
+2025-08-05 13:02:55.399 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:02:55.401 +05:00 [INF] Request to /api/Booking/create took 2.297 seconds with status code 200
+2025-08-05 13:02:55.412 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 2314.7602ms
+2025-08-05 13:03:06.207 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 133
+2025-08-05 13:03:06.214 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:03:06.215 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:03:06.333 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:03:06.335 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:03:06.336 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 120.4987ms
+2025-08-05 13:03:06.336 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:03:06.336 +05:00 [INF] Request to /api/Booking/create took 0.122 seconds with status code 200
+2025-08-05 13:03:06.337 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 129.6434ms
+2025-08-05 13:04:54.906 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 13:04:55.069 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 13:04:55.158 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 13:04:55.275 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 13:04:55.277 +05:00 [INF] Hosting environment: Development
+2025-08-05 13:04:55.277 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 13:04:55.430 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 13:04:55.430 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 13:04:55.434 +05:00 [INF] Request to /swagger/index.html took 0.096 seconds with status code 200
+2025-08-05 13:04:55.434 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.8763ms
+2025-08-05 13:04:55.437 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 284.4618ms
+2025-08-05 13:04:55.469 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.0276ms
+2025-08-05 13:04:55.766 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 13:04:55.921 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.151 seconds with status code 200
+2025-08-05 13:04:55.922 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 155.7484ms
+2025-08-05 13:05:38.192 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 134
+2025-08-05 13:05:38.203 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 13:05:38.207 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:05:38.253 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:05:40.459 +05:00 [INF] Executed DbCommand (49ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:05:40.538 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:05:40.548 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 2290.1586ms
+2025-08-05 13:05:40.548 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:05:40.550 +05:00 [INF] Request to /api/Booking/create took 2.351 seconds with status code 200
+2025-08-05 13:05:40.562 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 2369.5197ms
+2025-08-05 13:05:45.695 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 134
+2025-08-05 13:05:45.701 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:05:45.701 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:05:45.832 +05:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:05:45.833 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:05:45.834 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 132.4297ms
+2025-08-05 13:05:45.834 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:05:45.835 +05:00 [INF] Request to /api/Booking/create took 0.133 seconds with status code 200
+2025-08-05 13:05:45.835 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 140.1278ms
+2025-08-05 13:05:53.465 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 134
+2025-08-05 13:05:53.466 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:05:53.466 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:05:53.525 +05:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:05:53.527 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:05:53.527 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 61.1858ms
+2025-08-05 13:05:53.527 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:05:53.528 +05:00 [INF] Request to /api/Booking/create took 0.061 seconds with status code 200
+2025-08-05 13:05:53.529 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 63.9057ms
+2025-08-05 13:06:23.231 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 134
+2025-08-05 13:06:23.232 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:06:23.233 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:06:23.262 +05:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:06:23.263 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:06:23.263 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 30.3814ms
+2025-08-05 13:06:23.263 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:06:23.263 +05:00 [INF] Request to /api/Booking/create took 0.031 seconds with status code 200
+2025-08-05 13:06:23.264 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 32.4842ms
+2025-08-05 13:06:31.054 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 134
+2025-08-05 13:06:31.055 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:06:31.055 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:06:31.064 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:06:31.065 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:06:31.066 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 10.7804ms
+2025-08-05 13:06:31.066 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:06:31.066 +05:00 [INF] Request to /api/Booking/create took 0.011 seconds with status code 200
+2025-08-05 13:06:31.067 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 12.5275ms
+2025-08-05 13:06:37.173 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5117/api/Booking/create - application/json 134
+2025-08-05 13:06:37.174 +05:00 [INF] Executing endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:06:37.174 +05:00 [INF] Route matched with {action = "CreateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] CreateBookingAsync(HotelBookingSystem.Application.Dtos.BookingDtos.CreateBookingDto) on controller HotelBookingSystem.Web.Controllers.BookingController (HotelBookingSystem.Web).
+2025-08-05 13:06:37.217 +05:00 [INF] Executed DbCommand (39ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([EndDate], [IsActive], [StartDate], [Status], [UserId])
+OUTPUT INSERTED.[BookingId], INSERTED.[CreatedAt]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-05 13:06:37.223 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-08-05 13:06:37.225 +05:00 [INF] Executed action HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web) in 50.8144ms
+2025-08-05 13:06:37.225 +05:00 [INF] Executed endpoint 'HotelBookingSystem.Web.Controllers.BookingController.CreateBookingAsync (HotelBookingSystem.Web)'
+2025-08-05 13:06:37.226 +05:00 [INF] Request to /api/Booking/create took 0.051 seconds with status code 200
+2025-08-05 13:06:37.230 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5117/api/Booking/create - 200 null application/json; charset=utf-8 55.9513ms
+2025-08-05 22:13:59.559 +05:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 22:13:59.778 +05:00 [INF] Now listening on: http://localhost:5117
+2025-08-05 22:13:59.942 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 22:13:59.943 +05:00 [INF] Hosting environment: Development
+2025-08-05 22:13:59.943 +05:00 [INF] Content root path: C:\Users\user\source\repos\HotelBookingSystem\HotelBookingSystem\src\HotelBookingSystem.Web
+2025-08-05 22:14:00.966 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/index.html - null null
+2025-08-05 22:14:01.287 +05:00 [INF] Request to /swagger/index.html took 0.13 seconds with status code 200
+2025-08-05 22:14:01.290 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/index.html - 200 null text/html;charset=utf-8 328.5394ms
+2025-08-05 22:14:01.304 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-05 22:14:01.306 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.5449ms
+2025-08-05 22:14:01.310 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/_vs/browserLink - null null
+2025-08-05 22:14:01.348 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.3782ms
+2025-08-05 22:14:01.484 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - null null
+2025-08-05 22:14:01.654 +05:00 [INF] Request to /swagger/v1/swagger.json took 0.166 seconds with status code 200
+2025-08-05 22:14:01.654 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5117/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 169.999ms

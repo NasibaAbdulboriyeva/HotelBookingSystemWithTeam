@@ -27,6 +27,8 @@ namespace HotelBookingSystem.Infrastructure.Persistence.Repositories
         public async Task UpdateAsync(RoomType roomType)
         {
             _context.RoomTypes.Update(roomType);
+            await _context.SaveChangesAsync();
+
         }
 
         public async Task RemoveAsync(long id)

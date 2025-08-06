@@ -49,6 +49,7 @@ public class HotelRepository : IHotelRepository
     public async Task UpdateAsync(Hotel hotel)
     {
         _context.Hotels.Update(hotel);
+        await _context.SaveChangesAsync();
     }
     public async Task<int> SaveChangesAsync()
     {
